@@ -1,0 +1,76 @@
+// widget wordpress
+.widget {
+    margin-bottom: 2rem;
+    ul {
+        padding-left: 1.5rem;
+        margin: 0;
+    }
+}
+
+// widget calendar
+.widget_calendar {
+    .wp-calendar-table {
+        @extend .table;   
+        thead {
+            @extend .table-dark;
+            th {
+                @extend .border-dark;
+            }
+        }
+    }
+}
+
+//widget recent posts
+.widget_recent_entries {
+    ul {
+        @extend .list-unstyled;
+        li:not(:last-child) {
+            margin-bottom: 0.25em;
+        }
+        a {
+            display: block;
+        }
+        .post-date {
+            font-size: 90%;
+            display: block;
+        }
+    }
+}
+
+//widget tags cluod
+.tag-cloud-link {
+    font-size: .875rem !important;
+    margin: 0 0.3rem 0.3rem 0;
+    @extend .btn;      
+    @extend .btn-sm;
+    @extend .btn-secondary;
+    @extend .text-light;
+}
+.widget_tag_cloud {
+    .tag-cloud-link, a {  
+        @extend .tag-cloud-link; 
+    }
+}
+
+// widget recent comments
+ol.wp-block-latest-comments {
+    @extend .list-unstyled;
+}
+
+//widget block search
+.widget_search {
+    .wp-block-search__button {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+    .wp-block-search__button-outside {
+        .wp-block-search__input {
+            @extend .form-control;
+        }
+    }
+    .wp-block-search__button-inside {
+        .wp-block-search__inside-wrapper {
+            @extend .rounded;
+        }
+    }
+}

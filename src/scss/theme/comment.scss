@@ -1,0 +1,88 @@
+//comment form wordpress
+#comments {
+    margin: 2rem 0;
+    .comments-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+
+        span {
+            text-transform: none;
+        }
+    }
+    .comment-list {
+        padding: 0;
+        list-style: none;
+        .comment {
+            margin-top: 2rem;
+            position: relative;
+            .comment-body {
+                .says {
+                    display: none;
+                }
+                .comment-meta {
+                    clear: both;
+                    margin-bottom: 0.5rem;
+                    .comment-author {
+                        img {
+                            float: left;
+                            margin: 0 0.75rem 0.75rem 0;
+                            border-radius: 0.35rem;
+                        }
+                    }
+                }
+                .comment-content {
+                    clear: both;
+                    padding-left: 3.7rem;
+                    h1, .h1 {
+                        font-size: 1.3rem;
+                    }
+                }
+                .reply {
+                    .comment-reply-link {
+                        position: relative;
+                        margin-left: 3.7rem;
+                    }
+                    .comment-reply-link:before {
+                        content: "\f112";
+                        font-family: "FontAwesome";
+                        margin-right: 0.3rem;
+                    }
+                }
+            }
+            .comment-respond {
+                background: #f3f3f3;
+                padding: 1rem;
+                margin: 1rem 0;
+                border-radius: 0.25rem;
+                .comment-reply-title {
+                    font-size: 1.25rem;
+                    #cancel-comment-reply-link {
+                        margin-left: 1rem;
+                        position: relative;
+                    }
+                }
+            }
+        }
+        .comment-author-admin {
+            background: #fffcec;
+            padding: 0.3rem;
+            border-left: 2px solid #e4debe;
+            .comment-author {
+                .url {
+                    position: relative;
+                    :before {
+                        content: "\f005";
+                        font-family: "FontAwesome";
+                        margin-right: 0.3rem;
+                    }
+                }                  
+            }
+        }
+          
+    } 
+    ol.children {
+        list-style: none;
+        padding-left: 3.7rem;
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "zahro",
+  "version": "0.0.1",
+  "description": "A WordPress starter theme framework",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "watch": "build --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adityathok/wpzaro/zahro"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "adityathok",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "vite": "^5.0.4"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2"
+  }
+}

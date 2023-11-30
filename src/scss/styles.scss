@@ -1,0 +1,10 @@
+// add variables to overwrite Bootstrap
+@import "theme/theme_variables"; 
+
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+// add style for wordpress
+@import "theme/comment"; 
+@import "theme/contact-form7"; 
+@import "theme/widget"; 
