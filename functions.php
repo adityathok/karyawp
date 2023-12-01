@@ -13,8 +13,9 @@ $zahro_inc_dir = 'inc';
 
 // Array of files to include.
 $zahro_includes = array(
-	'/setup.php',           /// Theme setup and custom theme supports.
-	'/enqueue.php',         /// Enqueue scripts and styles.
+	'/core/setup.php',           /// Theme setup and custom theme supports.
+	'/core/enqueue.php',         /// Enqueue scripts and styles.
+	'/views/navbar.php',	 	/// Views header navbar
 );
 
 // Include files.
