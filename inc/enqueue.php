@@ -15,10 +15,8 @@ if ( ! function_exists( 'zahro_scripts' ) ) {
     add_action( 'wp_enqueue_scripts', 'zahro_scripts' );
 	function zahro_scripts() {
 
-		// Get the theme data.
-		$the_theme      = wp_get_theme();
-		$theme_version  = $the_theme->get( 'Version' );
-		$theme_version  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? $theme_version : $theme_version.'.'.time() ;
+		// Get the theme version.
+		$theme_version  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? ZAHRO_VERSION : ZAHRO_VERSION.'.'.time() ;
 
 		wp_enqueue_style( 'zahro-styles', get_template_directory_uri() . '/assets/zahro.css', array(), $theme_version );
 

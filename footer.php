@@ -9,8 +9,22 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
+            <?php 
+            /** 
+            * zahro_close_content()
+            */
+            do_action( 'zahro_content_after' );
+            ?>
 
         </div><!-- #page-content closing div-->
+        
+		<?php 
+		/** 
+		* zahro_footer()
+		* template-parts/footer
+		*/
+		do_action( 'zahro_footer' );
+		?>
 
     </div><!-- #page closing div-->
 

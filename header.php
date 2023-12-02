@@ -27,17 +27,22 @@ defined( 'ABSPATH' ) || exit;
 	<div class="site" id="page">
 
 		<div class="skippy visually-hidden-focusable overflow-hidden">
-			<div class="container-xl">
-				<a class="d-inline-flex p-2 m-1" href="#content"><?php esc_html_e('Skip to content', 'zahro'); ?></a>    
-			</div>
+			<a class="d-inline-flex p-2 m-1" href="#content"><?php esc_html_e('Skip to content', 'zahro'); ?></a>    
 		</div>
 
 		<?php 
 		/** 
-		* inc/views/navbar
-		* zahro_navbar()
+		* zahro_header()
+		* template-parts/header
 		*/
 		do_action( 'zahro_header' );
 		?>
 
-		<div class="site-content" id="page-content">
+		<div class="site-content" id="content">
+		
+			<?php 
+			/** 
+			* zahro_content_before()
+			*/
+			do_action( 'zahro_content_before' );
+			?>

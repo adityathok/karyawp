@@ -8,14 +8,17 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// define Version
+define( 'ZAHRO_VERSION', '0.0.1' );
+
 // includes directory.
 $zahro_inc_dir = 'inc';
 
 // Array of files to include.
 $zahro_includes = array(
-	'/core/setup.php',           /// Theme setup and custom theme supports.
-	'/core/enqueue.php',         /// Enqueue scripts and styles.
-	'/views/navbar.php',	 	/// Views header navbar
+	'/setup.php',           /// Theme setup and custom theme supports.
+	'/enqueue.php',         /// Enqueue scripts and styles.
+	'/layouts.php',	 		/// Layouting hooks
 );
 
 // Include files.
