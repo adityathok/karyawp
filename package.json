@@ -7,6 +7,7 @@
   "scripts": {
     "build": "vite build",
     "watch": "vite build --watch",
+    "dist-clean": "node src/build/clean.js",
     "dist-build": "node src/build/build.js"
   },
   "repository": {
