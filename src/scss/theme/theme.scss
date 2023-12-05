@@ -1,0 +1,36 @@
+// Adding basic WordPress classes to pass the WordPress.org tests
+.sticky,
+.gallery-caption,
+.bypostauthor {
+	font-size: inherit;
+}
+
+// Necessary WP classes
+.wp-caption {
+	font-size: inherit;
+}
+
+.wp-caption-text {
+	font-size: inherit;
+}
+
+.screen-reader-text {
+	@include visually-hidden();
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: $spacer;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: $spacer;
+}
+
+.aligncenter {
+	@extend .mx-auto;
+	display: block;
+}
