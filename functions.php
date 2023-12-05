@@ -18,6 +18,7 @@ $zahro_inc_dir = 'inc';
 $zahro_includes = array(
 	'/setup.php',           /// Theme setup and custom theme supports.
 	'/enqueue.php',         /// Enqueue scripts and styles.
+	'/widgets.php',	 		/// Declaring widgets
 	'/layouts.php',	 		/// Layouting hooks
 );
 

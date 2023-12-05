@@ -19,7 +19,7 @@ if (!function_exists('zahro_open_content')) {
     add_action('zahro_content_before', 'zahro_open_content', 21);
     function zahro_open_content()
     {
-        echo '<div class="container container-content">';
+        echo '<div class="container container-content py-3">';
     }
 }
 
@@ -37,5 +37,36 @@ if (!function_exists('zahro_footer')) {
     function zahro_footer()
     {
         get_template_part( 'template-parts/footer' );
+    }
+}
+
+/// SIDEBAR
+
+/// Sidebar Left
+if (!function_exists('zahro_sidebar_left')) {
+    add_action('zahro_sidebar_left', 'zahro_sidebar_left', 20);
+    function zahro_sidebar_left()
+    {
+        if ( ! is_active_sidebar( 'main-sidebar' ) ) {
+            return;
+        }
+        echo '<div class="row">';
+            echo '<div class="col-md-8 col-xl-9">';
+    }
+}
+
+/// Sidebar right
+if (!function_exists('zahro_sidebar_right')) {
+    add_action('zahro_sidebar_right', 'zahro_sidebar_right', 20);
+    function zahro_sidebar_right()
+    {
+        if ( ! is_active_sidebar( 'main-sidebar' ) ) {
+            return;
+        }
+            echo '</div>'; /// end column content
+            echo '<div class="col-md-4 col-xl-3">';
+                get_template_part( 'template-parts/sidebar' );
+            echo '</div>';
+        echo '</div>'; // end ROW
     }
 }
