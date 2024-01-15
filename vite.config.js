@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   build: {
     outDir: 'assets',
+    minify: 'esbuild',
     lib: {
       entry: resolve(__dirname, 'src/js/main.js'),
       name: 'zahro',
