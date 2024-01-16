@@ -10,14 +10,16 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<article <?php post_class('col-12 pb-3'); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('col-12 mb-4'); ?> id="post-<?php the_ID(); ?>">
 
     <div class="row">
         <div class="col-md-4">
 
+        <a href="%s" rel="noopener follow" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="ratio ratio-4x3 bg-light">
                 <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
             </div>
+        </a>
 
         </div>
         <div class="col-md">
