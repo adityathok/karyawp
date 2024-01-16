@@ -10,7 +10,7 @@ if (!function_exists('zahro_header')) {
     add_action('zahro_header', 'zahro_header', 20);
     function zahro_header()
     {
-        get_template_part( 'template-parts/header' );
+        get_template_part( 'templates-parts/header' );
     }
 }
 
@@ -36,7 +36,7 @@ if (!function_exists('zahro_footer')) {
     add_action('zahro_footer', 'zahro_footer', 20);
     function zahro_footer()
     {
-        get_template_part( 'template-parts/footer' );
+        get_template_part( 'templates-parts/footer' );
     }
 }
 
@@ -65,7 +65,7 @@ if (!function_exists('zahro_sidebar_right')) {
         }
             echo '</div>'; /// end column content
             echo '<div class="col-md-4 col-xl-3">';
-                get_template_part( 'template-parts/sidebar' );
+                get_template_part( 'templates-parts/sidebar' );
             echo '</div>';
         echo '</div>'; // end ROW
     }

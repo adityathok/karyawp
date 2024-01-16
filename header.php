@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php 
 		/** 
 		* zahro_header()
-		* template-parts/header
+		* templates-parts/header
 		*/
 		do_action( 'zahro_header' );
 		?>
