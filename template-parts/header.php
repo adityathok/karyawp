@@ -25,13 +25,16 @@ defined( 'ABSPATH' ) || exit;
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavigation" aria-labelledby="offcanvasNavigationLabel">
 
-                <?php if ( is_admin_bar_showing() ) { ?>
+                <?php if ( is_admin_bar_showing() ) { ?>                    
+                    <!-- offcanvas header with admin bar -->
                     <div class="offcanvas-header justify-content-end pt-5">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
                 <?php } else { ?>
                     <div class="offcanvas-header justify-content-end">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
                 <?php } ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
 
                 <div class="offcanvas-body">
 
@@ -40,15 +43,17 @@ defined( 'ABSPATH' ) || exit;
                     ?>
                     <!-- site-navigation -->
 
-                    <?php
-                        get_template_part( 'template-parts/header', 'search' );
-                    ?>
-                    <!-- -search-form-navigation -->
+                    <div class="d-flex justify-content-between">
+                        <?php
+                            get_template_part( 'template-parts/header', 'search' );
+                        ?>
+                        <!-- -search-form-navigation -->
 
-                    <?php
-                        get_template_part( 'template-parts/header', 'darkmode' );
-                    ?>
-                    <!-- -search-form-navigation -->
+                        <?php
+                            get_template_part( 'template-parts/header', 'darkmode' );
+                        ?>
+                        <!-- -darkmode-navigation -->
+                    </div>
 
                 </div>
 
