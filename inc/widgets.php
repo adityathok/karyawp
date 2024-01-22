@@ -15,9 +15,9 @@ if (!function_exists('zahro_widgets_init')) {
         //Main-Sidebar
         register_sidebar(
 			array(
-				'name'          => __('Main Sidebar', 'wpzaro'),
+				'name'          => __('Main Sidebar', 'zahro'),
 				'id'            => 'main-sidebar',
-				'description'   => __('sidebar widget area', 'wpzaro'),
+				'description'   => __('sidebar widget area', 'zahro'),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h3 class="widget-title">',

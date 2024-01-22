@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php 
 		/** 
 		* zahro_footer()
-		* templates-parts/footer
+		* template-parts/footer
 		*/
 		do_action( 'zahro_footer' );
 		?>

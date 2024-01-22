@@ -16,10 +16,12 @@ $zahro_inc_dir = 'inc';
 
 // Array of files to include.
 $zahro_includes = array(
-	'/setup.php',           /// Theme setup and custom theme supports.
-	'/enqueue.php',         /// Enqueue scripts and styles.
-	'/widgets.php',	 		/// Declaring widgets
-	'/layouts.php',	 		/// Layouting hooks
+	'/setup.php',           						/// Theme setup and custom theme supports.
+	'/class-wp-bootstrap-navwalker.php',           	/// Theme setup and custom theme supports.
+	'/enqueue.php',         						/// Enqueue scripts and styles.
+	'/widgets.php',	 								/// Declaring widgets
+	'/custom-comments.php',							/// Layouting Comments Form
+	'/layouts.php',	 								/// Layouting hooks
 );
 
 // Include files.

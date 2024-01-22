@@ -33,7 +33,7 @@ if ( post_password_required() ) {
 			if ( 1 === (int) $comments_number ) {
 				printf(
 					/* translators: %s: post title */
-					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'wpzaro' ),
+					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'zahro' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 							'%1$s thoughts on &ldquo;%2$s&rdquo;',
 							$comments_number,
 							'comments title',
-							'wpzaro'
+							'zahro'
 						)
 					),
 					number_format_i18n( $comments_number ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -56,7 +56,7 @@ if ( post_password_required() ) {
 
 		</h2><!-- .comments-title -->
 
-		<?php wpzaro_comment_navigation( 'comment-nav-above' ); ?>
+		<?php zahro_comment_navigation( 'comment-nav-above' ); ?>
 
 		<ol class="comment-list">
 
@@ -71,7 +71,7 @@ if ( post_password_required() ) {
 
 		</ol><!-- .comment-list -->
 
-		<?php wpzaro_comment_navigation( 'comment-nav-below' ); ?>
+		<?php zahro_comment_navigation( 'comment-nav-below' ); ?>
 
 	<?php endif; // End of if have_comments(). ?>
 
