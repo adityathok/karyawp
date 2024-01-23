@@ -13,17 +13,17 @@ defined( 'ABSPATH' ) || exit;
 <article <?php post_class('col-12 mb-4'); ?> id="post-<?php the_ID(); ?>">
 
     <div class="row">
-        <div class="col-md-4">
 
-        <a href="%s" rel="noopener follow" href="<?php echo esc_url( get_permalink() ); ?>">
-            <div class="ratio ratio-4x3 bg-light">
-                <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-            </div>
-        </a>
-
+        <div class="col-md-4 col-xl-3">
+            <a rel="noopener follow" href="<?php echo esc_url( get_permalink() ); ?>">
+                <div class="ratio ratio-4x3 bg-light">
+                    <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+                </div>
+            </a>
         </div>
-        <div class="col-md">
-            
+
+        <div class="col-md-8 col-xl-9 mt-2 mt-md-0">  
+
             <header class="entry-header">
                 <?php
                 the_title(
@@ -35,7 +35,7 @@ defined( 'ABSPATH' ) || exit;
 
             <div class="entry-content">
                 <?php
-                    the_excerpt();
+                    echo get_the_excerpt();
                 ?>
             </div><!-- .entry-content -->
 

@@ -16,6 +16,8 @@ $zahro_inc_dir = 'inc';
 
 // Array of files to include.
 $zahro_includes = array(
+	'/template-tags.php',							/// Custom functions that act independently of the theme templates.
+	'/extras.php',                          		/// Custom functions that act independently of the theme templates.
 	'/setup.php',           						/// Theme setup and custom theme supports.
 	'/class-wp-bootstrap-navwalker.php',           	/// Theme setup and custom theme supports.
 	'/enqueue.php',         						/// Enqueue scripts and styles.
