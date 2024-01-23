@@ -20,9 +20,10 @@ defined( 'ABSPATH' ) || exit;
             ?>
             <!-- site-branding -->
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavigation" aria-controls="offcanvasNavigation" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0 rounded-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavigation" aria-controls="offcanvasNavigation" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavigation" aria-labelledby="offcanvasNavigationLabel">
 
                 <?php if ( is_admin_bar_showing() ) { ?>                    
@@ -43,7 +44,7 @@ defined( 'ABSPATH' ) || exit;
                     ?>
                     <!-- site-navigation -->
 
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-end">
                         <?php
                             get_template_part( 'template-parts/header', 'search' );
                         ?>
