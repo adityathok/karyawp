@@ -30,6 +30,11 @@ get_header();
 
         </div>
 
+        <?php
+        // Display the pagination.
+        zahro_pagination();
+        ?>
+
     </main><!-- #main -->
 
 <?php
