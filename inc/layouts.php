@@ -16,7 +16,7 @@ if (!function_exists('zahro_header')) {
 
 ///Open content container
 if (!function_exists('zahro_open_content')) {
-    add_action('zahro_content_before', 'zahro_open_content', 21);
+    add_action('zahro_content_before', 'zahro_open_content', 20);
     function zahro_open_content()
     {
         echo '<div class="container container-content py-3">';
@@ -25,7 +25,7 @@ if (!function_exists('zahro_open_content')) {
 
 ///close content container
 if (!function_exists('zahro_close_content')) {
-    add_action('zahro_content_after', 'zahro_close_content', 19);
+    add_action('zahro_content_after', 'zahro_close_content', 20);
     function zahro_close_content()
     {
         echo '</div>';
@@ -40,11 +40,9 @@ if (!function_exists('zahro_footer')) {
     }
 }
 
-/// SIDEBAR
-
 /// Sidebar Left
 if (!function_exists('zahro_sidebar_left')) {
-    add_action('zahro_sidebar_left', 'zahro_sidebar_left', 20);
+    add_action('zahro_content_before', 'zahro_sidebar_left', 21);
     function zahro_sidebar_left()
     {
         if ( ! is_active_sidebar( 'main-sidebar' ) ) {
@@ -57,7 +55,7 @@ if (!function_exists('zahro_sidebar_left')) {
 
 /// Sidebar right
 if (!function_exists('zahro_sidebar_right')) {
-    add_action('zahro_sidebar_right', 'zahro_sidebar_right', 20);
+    add_action('zahro_content_after', 'zahro_sidebar_right', 19);
     function zahro_sidebar_right()
     {
         if ( ! is_active_sidebar( 'main-sidebar' ) ) {

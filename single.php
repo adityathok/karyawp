@@ -12,13 +12,6 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-    <?php 
-    /** 
-    * zahro_sidebar_left(), 20
-    */
-    do_action( 'zahro_sidebar_left' );
-    ?>
-
     <main class="site-main" id="main">
 
         <?php
@@ -34,13 +27,6 @@ get_header();
         ?>
 
     </main><!-- #main -->
-
-    <?php 
-    /** 
-    * zahro_sidebar_right()
-    */
-    do_action( 'zahro_sidebar_right' );
-    ?>
 
 <?php
 get_footer();
