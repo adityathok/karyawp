@@ -22,7 +22,6 @@ if (!function_exists('zahro_open_content')) {
         echo '<div class="container container-content py-3">';
     }
 }
-
 ///close content container
 if (!function_exists('zahro_close_content')) {
     add_action('zahro_content_after', 'zahro_close_content', 20);
@@ -31,6 +30,24 @@ if (!function_exists('zahro_close_content')) {
         echo '</div>';
     }
 }
+
+///Open content wrapper
+if (!function_exists('zahro_open_content_wrapper')) {
+    add_action('zahro_content_before', 'zahro_open_content_wrapper', 19);
+    function zahro_open_content_wrapper()
+    {
+        echo '<div class="content-wrapper py-3 py-md-5">';
+    }
+}
+///close content wrapper
+if (!function_exists('zahro_close_content_wrapper')) {
+    add_action('zahro_content_after', 'zahro_close_content_wrapper', 21);
+    function zahro_close_content_wrapper()
+    {
+        echo '</div>';
+    }
+}
+
 /// Footer
 if (!function_exists('zahro_footer')) {
     add_action('zahro_footer', 'zahro_footer', 20);
@@ -52,7 +69,6 @@ if (!function_exists('zahro_sidebar_left')) {
             echo '<div class="col-md-8 col-xl-9">';
     }
 }
-
 /// Sidebar right
 if (!function_exists('zahro_sidebar_right')) {
     add_action('zahro_content_after', 'zahro_sidebar_right', 19);
