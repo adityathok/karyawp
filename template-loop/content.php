@@ -40,8 +40,8 @@ defined( 'ABSPATH' ) || exit;
             </div><!-- .entry-content -->
 
             <?php if ('post' === get_post_type()) : ?>
-                <div class="entry-meta">
-                    <small><?php echo get_the_date(); ?></small>
+                <div class="entry-meta mt-2">
+                    <small><?php echo zahro_entry_meta(); ?></small>
                 </div><!-- .entry-meta -->
             <?php endif; ?>
 
