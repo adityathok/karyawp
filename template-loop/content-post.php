@@ -2,7 +2,7 @@
 /**
  * Partial template for content in posts
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.

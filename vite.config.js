@@ -8,15 +8,15 @@ export default defineConfig({
     minify: 'esbuild',
     lib: {
       entry: resolve(__dirname, 'src/js/main.js'),
-      name: 'zahro',
-      fileName: 'zahro', 
+      name: 'karyawp',
+      fileName: 'karyawp', 
       formats: ['es', 'cjs']
     },
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
           if (assetInfo.name == 'style.css')
-            return 'zahro.css';
+            return 'karyawp.css';
           return assetInfo.name;
         },
       }

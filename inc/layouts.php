@@ -2,65 +2,65 @@
 /**
  * Layout Hooks
  *
- * @package zahro
+ * @package karyawp
 */
 
 /// Header
-if (!function_exists('zahro_header')) {
-    add_action('zahro_header', 'zahro_header', 20);
-    function zahro_header()
+if (!function_exists('karyawp_header')) {
+    add_action('karyawp_header', 'karyawp_header', 20);
+    function karyawp_header()
     {
         get_template_part( 'template-parts/header' );
     }
 }
 
 ///Open content container
-if (!function_exists('zahro_open_content')) {
-    add_action('zahro_content_before', 'zahro_open_content', 20);
-    function zahro_open_content()
+if (!function_exists('karyawp_open_content')) {
+    add_action('karyawp_content_before', 'karyawp_open_content', 20);
+    function karyawp_open_content()
     {
         echo '<div class="container container-content py-3">';
     }
 }
 ///close content container
-if (!function_exists('zahro_close_content')) {
-    add_action('zahro_content_after', 'zahro_close_content', 20);
-    function zahro_close_content()
+if (!function_exists('karyawp_close_content')) {
+    add_action('karyawp_content_after', 'karyawp_close_content', 20);
+    function karyawp_close_content()
     {
         echo '</div>';
     }
 }
 
 ///Open content wrapper
-if (!function_exists('zahro_open_content_wrapper')) {
-    add_action('zahro_content_before', 'zahro_open_content_wrapper', 19);
-    function zahro_open_content_wrapper()
+if (!function_exists('karyawp_open_content_wrapper')) {
+    add_action('karyawp_content_before', 'karyawp_open_content_wrapper', 19);
+    function karyawp_open_content_wrapper()
     {
         echo '<div class="content-wrapper py-3 py-md-5">';
     }
 }
 ///close content wrapper
-if (!function_exists('zahro_close_content_wrapper')) {
-    add_action('zahro_content_after', 'zahro_close_content_wrapper', 21);
-    function zahro_close_content_wrapper()
+if (!function_exists('karyawp_close_content_wrapper')) {
+    add_action('karyawp_content_after', 'karyawp_close_content_wrapper', 21);
+    function karyawp_close_content_wrapper()
     {
         echo '</div>';
     }
 }
 
 /// Footer
-if (!function_exists('zahro_footer')) {
-    add_action('zahro_footer', 'zahro_footer', 20);
-    function zahro_footer()
+if (!function_exists('karyawp_footer')) {
+    add_action('karyawp_footer', 'karyawp_footer', 20);
+    function karyawp_footer()
     {
         get_template_part( 'template-parts/footer' );
     }
 }
 
 /// Sidebar Left
-if (!function_exists('zahro_sidebar_left')) {
-    add_action('zahro_content_before', 'zahro_sidebar_left', 21);
-    function zahro_sidebar_left()
+if (!function_exists('karyawp_sidebar_left')) {
+    add_action('karyawp_content_before', 'karyawp_sidebar_left', 21);
+    function karyawp_sidebar_left()
     {
         if ( ! is_active_sidebar( 'main-sidebar' ) ) {
             return;
@@ -70,9 +70,9 @@ if (!function_exists('zahro_sidebar_left')) {
     }
 }
 /// Sidebar right
-if (!function_exists('zahro_sidebar_right')) {
-    add_action('zahro_content_after', 'zahro_sidebar_right', 19);
-    function zahro_sidebar_right()
+if (!function_exists('karyawp_sidebar_right')) {
+    add_action('karyawp_content_after', 'karyawp_sidebar_right', 19);
+    function karyawp_sidebar_right()
     {
         if ( ! is_active_sidebar( 'main-sidebar' ) ) {
             return;

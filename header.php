@@ -2,7 +2,7 @@
 /**
  * The Header
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.
@@ -20,29 +20,29 @@ defined( 'ABSPATH' ) || exit;
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php zahro_body_attributes(); ?>>
+<body <?php body_class(); ?> <?php karyawp_body_attributes(); ?>>
 
 	<?php do_action('wp_body_open'); ?>
 
 	<div class="site" id="page">
 
 		<div class="skippy visually-hidden-focusable overflow-hidden">
-			<a class="d-inline-flex p-2 m-1" href="#content"><?php esc_html_e('Skip to content', 'zahro'); ?></a>    
+			<a class="d-inline-flex p-2 m-1" href="#content"><?php esc_html_e('Skip to content', 'karyawp'); ?></a>    
 		</div>
 
 		<?php 
 		/** 
-		* zahro_header()
+		* karyawp_header()
 		* template-parts/header
 		*/
-		do_action( 'zahro_header' );
+		do_action( 'karyawp_header' );
 		?>
 
 		<div class="site-content" id="content">
 		
 			<?php 
 			/** 
-			* zahro_content_before()
+			* karyawp_content_before()
 			*/
-			do_action( 'zahro_content_before' );
+			do_action( 'karyawp_content_before' );
 			?>

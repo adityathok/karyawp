@@ -2,7 +2,7 @@
 /**
  * Layout Footer
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.
@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 
                 <?php
                 /* translators: 1: Theme name, 2: Theme author. */
-                printf( esc_html__( 'Theme: %1$s by %2$s.', 'zahro' ), 'Zahro', '<a href="https://github.com/adityathok/zahro/">Adityathok</a>' );
+                printf( esc_html__( 'Theme: %1$s by %2$s.', 'karyawp' ), 'karyawp', '<a href="https://github.com/adityathok/karyawp/">Adityathok</a>' );
                 ?>
 
         </div><!-- .site-info -->

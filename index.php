@@ -3,7 +3,7 @@
  * Template Name: Blog Index
  * Description: The template for displaying the Blog index /blog.
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.
@@ -32,7 +32,7 @@ get_header();
 
         <?php
         // Display the pagination.
-        zahro_pagination();
+        karyawp_pagination();
         ?>
 
     </main><!-- #main -->

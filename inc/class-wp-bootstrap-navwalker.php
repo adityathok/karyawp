@@ -23,13 +23,13 @@ defined('ABSPATH') || exit;
  */
 
 /* Check if Class Exists. */
-if (!class_exists('zahro_WP_Bootstrap_Navwalker')) {
+if (!class_exists('karyawp_WP_Bootstrap_Navwalker')) {
 	/**
 	 * WP_Bootstrap_Navwalker class.
 	 *
 	 * @extends Walker_Nav_Menu
 	 */
-	class zahro_WP_Bootstrap_Navwalker extends Walker_Nav_Menu
+	class karyawp_WP_Bootstrap_Navwalker extends Walker_Nav_Menu
 	{
 
 		/**
@@ -382,7 +382,7 @@ if (!class_exists('zahro_WP_Bootstrap_Navwalker')) {
 					$fallback_output .= ' class="' . esc_attr($menu_class) . '"';
 				}
 				$fallback_output .= '>';
-				$fallback_output .= '<li><a href="' . esc_url(admin_url('nav-menus.php')) . '" title="' . esc_attr__('Add a menu', 'zahro') . '">' . esc_html__('Add a menu', 'zahro') . '</a></li>';
+				$fallback_output .= '<li><a href="' . esc_url(admin_url('nav-menus.php')) . '" title="' . esc_attr__('Add a menu', 'karyawp') . '">' . esc_html__('Add a menu', 'karyawp') . '</a></li>';
 				$fallback_output .= '</ul>';
 				if ($container) {
 					$fallback_output .= '</' . esc_attr($container) . '>';

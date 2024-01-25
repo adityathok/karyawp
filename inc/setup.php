@@ -2,7 +2,7 @@
 /**
  * Theme basic setup
  *
- * @package zahro
+ * @package karyawp
  */
 
 
@@ -14,9 +14,9 @@ if (!isset($content_width)) {
 	$content_width = 640; /* pixels */
 }
 
-add_action('after_setup_theme', 'zahro_setup');
+add_action('after_setup_theme', 'karyawp_setup');
 
-if (!function_exists('zahro_setup')) {
+if (!function_exists('karyawp_setup')) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -24,15 +24,15 @@ if (!function_exists('zahro_setup')) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function zahro_setup()
+	function karyawp_setup()
 	{
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on zahro, use a find and replace
-		 * to change 'zahro' to the name of your theme in all the template files
+		 * If you're building a theme based on karyawp, use a find and replace
+		 * to change 'karyawp' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain('zahro', get_template_directory() . '/languages');
+		load_theme_textdomain('karyawp', get_template_directory() . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support('automatic-feed-links');
@@ -48,7 +48,7 @@ if (!function_exists('zahro_setup')) {
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary' 	=> __('Primary Menu', 'zahro'),
+				'primary' 	=> __('Primary Menu', 'karyawp'),
 			)
 		);
 
@@ -103,13 +103,13 @@ if (!function_exists('zahro_setup')) {
 	}
 }
 
-add_action('after_setup_theme', 'zahro_beaver_builder_support');
+add_action('after_setup_theme', 'karyawp_beaver_builder_support');
 
-if (!function_exists('zahro_beaver_builder_support')) {
+if (!function_exists('karyawp_beaver_builder_support')) {
 	/**
 	 * Add Themer support beaver builder to theme
 	 */
-	function zahro_beaver_builder_support()
+	function karyawp_beaver_builder_support()
 	{
 		add_theme_support('fl-theme-builder-headers');
 		add_theme_support('fl-theme-builder-footers');

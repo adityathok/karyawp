@@ -2,13 +2,13 @@
 /**
  * Pagination layout
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'zahro_pagination' ) ) {
+if ( ! function_exists( 'karyawp_pagination' ) ) {
 	/**
 	 * Displays the navigation to next/previous set of posts.
 	 *
@@ -39,7 +39,7 @@ if ( ! function_exists( 'zahro_pagination' ) ) {
 	 * }
 	 * @param string       $class           (Optional) Classes to be added to the <ul> element. Default 'pagination'.
 	 */
-	function zahro_pagination( $args = array(), $class = 'pagination justify-content-end' ) {
+	function karyawp_pagination( $args = array(), $class = 'pagination justify-content-end' ) {
 
 		if ( ! isset( $args['total'] ) && $GLOBALS['wp_query']->max_num_pages <= 1 ) {
 			return;
@@ -50,11 +50,11 @@ if ( ! function_exists( 'zahro_pagination' ) ) {
 			array(
 				'mid_size'           => 2,
 				'prev_next'          => true,
-				'prev_text'          => __( '&laquo;', 'zahro' ),
-				'next_text'          => __( '&raquo;', 'zahro' ),
+				'prev_text'          => __( '&laquo;', 'karyawp' ),
+				'next_text'          => __( '&raquo;', 'karyawp' ),
 				'type'               => 'array',
 				'current'            => max( 1, get_query_var( 'paged' ) ),
-				'screen_reader_text' => __( 'Posts navigation', 'zahro' ),
+				'screen_reader_text' => __( 'Posts navigation', 'karyawp' ),
 			)
 		);
 

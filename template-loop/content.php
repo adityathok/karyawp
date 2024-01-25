@@ -2,7 +2,7 @@
 /**
  * Partial template for content in archive post
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.
@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) || exit;
 
             <?php if ('post' === get_post_type()) : ?>
                 <div class="entry-meta mt-2">
-                    <small><?php echo zahro_entry_meta(); ?></small>
+                    <small><?php echo karyawp_entry_meta(); ?></small>
                 </div><!-- .entry-meta -->
             <?php endif; ?>
 

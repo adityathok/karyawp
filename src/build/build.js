@@ -42,12 +42,12 @@ async function copyDir(src, dest) {
   }
 }
 
-deleteAsync(['dist','assets/zahro.cjs']).then( async() => {
+deleteAsync(['dist','assets/karyawp.cjs']).then( async() => {
     console.log('delete folder dist');
-    copyDir("./", "./dist/zahro").then(() => {  
+    copyDir("./", "./dist/karyawp").then(() => {  
         console.log('copy folder dist'); 
-        zipdir("./dist/zahro", { saveTo: "./dist/zahro.zip" });
-        console.log('create zahro.zip');
+        zipdir("./dist/karyawp", { saveTo: "./dist/karyawp.zip" });
+        console.log('create karyawp.zip');
     });
 });
 

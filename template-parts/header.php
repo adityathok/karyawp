@@ -2,7 +2,7 @@
 /**
  * Layout Header
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.

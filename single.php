@@ -3,7 +3,7 @@
  * Template Name: Single
  * Description: The template for displaying the Post.
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.

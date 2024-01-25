@@ -2,7 +2,7 @@
 /**
  * Partial template for content in page.php
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.

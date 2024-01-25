@@ -1,4 +1,4 @@
-=== Zahro ===
+=== KaryaWP ===
 Contributors: adityathok
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready
 Requires at least: 5.0

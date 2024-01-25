@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package zahro
+ * @package karyawp
  */
 
 ?>
@@ -19,7 +19,7 @@ wp_nav_menu(
         'fallback_cb'     => '',
         'menu_id'         => 'main-menu',
         'depth'           => 2,
-        'walker'          => new zahro_WP_Bootstrap_Navwalker(),
+        'walker'          => new karyawp_WP_Bootstrap_Navwalker(),
     )
 );
 ?>

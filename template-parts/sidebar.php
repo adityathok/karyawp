@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package zahro
+ * @package karyawp
 */
 
 // Exit if accessed directly.

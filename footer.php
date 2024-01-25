@@ -2,7 +2,7 @@
 /**
  * The Footer
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.
@@ -11,19 +11,19 @@ defined( 'ABSPATH' ) || exit;
 ?>
             <?php 
             /** 
-            * zahro_close_content()
+            * karyawp_close_content()
             */
-            do_action( 'zahro_content_after' );
+            do_action( 'karyawp_content_after' );
             ?>
 
         </div><!-- #page-content closing div-->
         
 		<?php 
 		/** 
-		* zahro_footer()
+		* karyawp_footer()
 		* template-parts/footer
 		*/
-		do_action( 'zahro_footer' );
+		do_action( 'karyawp_footer' );
 		?>
 
     </div><!-- #page closing div-->

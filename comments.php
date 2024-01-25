@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.
@@ -33,7 +33,7 @@ if ( post_password_required() ) {
 			if ( 1 === (int) $comments_number ) {
 				printf(
 					/* translators: %s: post title */
-					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'zahro' ),
+					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'karyawp' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 							'%1$s thoughts on &ldquo;%2$s&rdquo;',
 							$comments_number,
 							'comments title',
-							'zahro'
+							'karyawp'
 						)
 					),
 					number_format_i18n( $comments_number ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -56,7 +56,7 @@ if ( post_password_required() ) {
 
 		</h2><!-- .comments-title -->
 
-		<?php zahro_comment_navigation( 'comment-nav-above' ); ?>
+		<?php karyawp_comment_navigation( 'comment-nav-above' ); ?>
 
 		<ol class="comment-list">
 
@@ -71,7 +71,7 @@ if ( post_password_required() ) {
 
 		</ol><!-- .comment-list -->
 
-		<?php zahro_comment_navigation( 'comment-nav-below' ); ?>
+		<?php karyawp_comment_navigation( 'comment-nav-below' ); ?>
 
 	<?php endif; // End of if have_comments(). ?>
 

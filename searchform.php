@@ -2,7 +2,7 @@
 /**
  * Template part for displaying get_search_form()
  *
- * @package zahro
+ * @package karyawp
  */
 
 // The search form specific unique ID for the input.
@@ -14,7 +14,7 @@ $size = isset($args['size']) && !empty($args['size'])?$args['size']:'';
 
 <form role="search" class="search-form" method="get" action="<?php echo esc_url(home_url('/')); ?>">
 
-	<label class="screen-reader-text" for="<?php echo $uid; ?>"><?php echo esc_html_x('Search for:', 'label', 'zahro'); ?></label>
+	<label class="screen-reader-text" for="<?php echo $uid; ?>"><?php echo esc_html_x('Search for:', 'label', 'karyawp'); ?></label>
 
 	<div class="input-group bg-light border rounded position-relative overflow-hidden">
 
@@ -30,7 +30,7 @@ $size = isset($args['size']) && !empty($args['size'])?$args['size']:'';
               $form_input = 'form-control';
         }
         ?>
-		<input type="search" class="field search-field <?php echo $form_input ; ?> bg-light border-0 rounded-0" id="<?php echo $uid; ?>" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'zahro'); ?>">
+		<input type="search" class="field search-field <?php echo $form_input ; ?> bg-light border-0 rounded-0" id="<?php echo $uid; ?>" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'karyawp'); ?>">
 		
         <?php 
         switch ($size) {

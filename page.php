@@ -3,7 +3,7 @@
  * Template Name: Page
  * Description: The template for displaying the Page.
  *
- * @package zahro
+ * @package karyawp
  */
 
 // Exit if accessed directly.
