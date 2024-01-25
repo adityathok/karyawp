@@ -53,7 +53,7 @@ if (!function_exists('karyawp_footer')) {
     add_action('karyawp_footer', 'karyawp_footer', 20);
     function karyawp_footer()
     {
-        get_template_part( 'partials/footer' );
+        get_template_part( 'partials/footer/layout' );
     }
 }
 
