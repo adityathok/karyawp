@@ -54,7 +54,7 @@ if (!class_exists('karyawp_WP_Bootstrap_Navwalker')) {
 			}
 			$indent = str_repeat($t, $depth);
 			// Default class to add to the file.
-			$classes = array('dropdown-menu rounded-0');
+			$classes = array('dropdown-menu rounded-0 px-3 px-md-1');
 			/**
 			 * Filters the CSS class(es) applied to a menu list element.
 			 *
@@ -73,13 +73,13 @@ if (!class_exists('karyawp_WP_Bootstrap_Navwalker')) {
 			 * Form a string for the labelledby attribute from the the latest
 			 * link with an id that was added to the $output.
 			 */
-			$labelledby = '';
+			$labelledby = 'style="--bs-dropdown-min-width:16rem;"';
 			// find all links with an id in the output.
 			preg_match_all('/(<a.*?id=\"|\')(.*?)\"|\'.*?>/im', $output, $matches);
 			// with pointer at end of array check if we got an ID match.
 			if (end($matches[2])) {
 				// build a string to use as aria-labelledby.
-				$labelledby = 'aria-labelledby="' . end($matches[2]) . '"';
+				$labelledby .= ' aria-labelledby="' . end($matches[2]) . '"';
 			}
 			$output .= "{$n}{$indent}<ul$class_names $labelledby >{$n}";
 		}
@@ -192,22 +192,27 @@ if (!class_exists('karyawp_WP_Bootstrap_Navwalker')) {
 			}
 
 			// If item has_children add atts to <a>.
-			if (isset($args->has_children) && $args->has_children && 0 === $depth && 1 !== $args->depth) {
-				$atts['href']           = '#';
-				$atts['data-toggle']    = 'dropdown';
-				$atts['data-bs-toggle'] = 'dropdown';
-				$atts['aria-haspopup']  = 'true';
-				$atts['aria-expanded']  = 'false';
-				$atts['class']          = 'dropdown-toggle nav-link';
-				$atts['id']             = 'menu-item-dropdown-' . $item->ID;
-			} else {
+			// if (isset($args->has_children) && $args->has_children && 0 === $depth && 1 !== $args->depth) {
+			// 	$atts['href']           = '#';
+			// 	$atts['data-toggle']    = 'dropdown';
+			// 	$atts['data-bs-toggle'] = 'dropdown';
+			// 	$atts['aria-haspopup']  = 'true';
+			// 	$atts['aria-expanded']  = 'false';
+			// 	$atts['class']          = 'dropdown-toggle nav-link';
+			// 	$atts['id']             = 'menu-item-dropdown-' . $item->ID;
+			// } else {
 				$atts['href'] = !empty($item->url) ? $item->url : '#';
 				// Items in dropdowns use .dropdown-item instead of .nav-link.
 				if ($depth > 0) {
-					$atts['class'] = 'dropdown-item';
+					$atts['class'] = 'nav-link py-1';
 				} else {
 					$atts['class'] = 'nav-link';
 				}
+			// }
+
+			// If item has_children add atts to <a>.
+			if (isset($args->has_children) && $args->has_children && 0 === $depth && 1 !== $args->depth) {
+				$atts['class'] = $atts['class'].' pe-0 d-inline-block';
 			}
 
 			$atts['aria-current'] = $item->current ? 'page' : '';
@@ -296,6 +301,11 @@ if (!class_exists('karyawp_WP_Bootstrap_Navwalker')) {
 			} else {
 				// With no link mod type set this must be a standard <a> tag.
 				$item_output .= '</a>';
+
+				if (isset($args->has_children) && $args->has_children && 0 === $depth && 1 !== $args->depth) {
+					$item_output .= '<button id="menu-item-dropdown-' . $item->ID.'" class="dropdown-toggle d-inline-block nav-link px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>';
+				}
+
 			}
 
 			$item_output .= isset($args->after) ? $args->after : '';
