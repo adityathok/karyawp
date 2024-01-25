@@ -21,10 +21,10 @@ get_header();
                 // Start the Loop.
                 while ( have_posts() ) {
                     the_post();
-                    get_template_part( 'template-loop/content', get_post_format() );
+                    get_template_part( 'partials/content/layout', get_post_format() );
                 }
             } else {
-                get_template_part( 'template-loop/content', 'none' );
+                get_template_part( 'partials/none' );
             }
             ?>
 
