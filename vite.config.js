@@ -8,15 +8,15 @@ export default defineConfig({
     minify: 'esbuild',
     lib: {
       entry: resolve(__dirname, 'src/js/main.js'),
-      name: 'karyawp',
-      fileName: 'karyawp', 
+      name: 'theme',
+      fileName: 'theme', 
       formats: ['es', 'cjs']
     },
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
           if (assetInfo.name == 'style.css')
-            return 'karyawp.css';
+            return 'theme.css';
           return assetInfo.name;
         },
       }
