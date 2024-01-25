@@ -10,7 +10,7 @@ if (!function_exists('karyawp_header')) {
     add_action('karyawp_header', 'karyawp_header', 20);
     function karyawp_header()
     {
-        get_template_part( 'template-parts/header' );
+        get_template_part( 'partials/header' );
     }
 }
 
@@ -53,7 +53,7 @@ if (!function_exists('karyawp_footer')) {
     add_action('karyawp_footer', 'karyawp_footer', 20);
     function karyawp_footer()
     {
-        get_template_part( 'template-parts/footer' );
+        get_template_part( 'partials/footer' );
     }
 }
 
@@ -79,7 +79,7 @@ if (!function_exists('karyawp_sidebar_right')) {
         }
             echo '</div>'; /// end column content
             echo '<div class="col-md-4 col-xl-3">';
-                get_template_part( 'template-parts/sidebar' );
+                get_template_part( 'partials/sidebar' );
             echo '</div>';
         echo '</div>'; // end ROW
     }

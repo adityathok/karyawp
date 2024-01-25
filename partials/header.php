@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
         <div class="container">                        
 
             <?php
-                get_template_part( 'template-parts/header', 'logo' );
+                get_template_part( 'partials/header', 'logo' );
             ?>
             <!-- site-branding -->
 
@@ -40,18 +40,18 @@ defined( 'ABSPATH' ) || exit;
                 <div class="offcanvas-body">
 
                     <?php
-                        get_template_part( 'template-parts/header', 'menu' );
+                        get_template_part( 'partials/header', 'menu' );
                     ?>
                     <!-- site-navigation -->
 
                     <div class="d-flex justify-content-end">
                         <?php
-                            get_template_part( 'template-parts/header', 'search' );
+                            get_template_part( 'partials/header', 'search' );
                         ?>
                         <!-- -search-form-navigation -->
 
                         <?php
-                            get_template_part( 'template-parts/header', 'darkmode' );
+                            get_template_part( 'partials/header', 'darkmode' );
                         ?>
                         <!-- -darkmode-navigation -->
                     </div>

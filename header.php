@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php 
 		/** 
 		* karyawp_header()
-		* template-parts/header
+		* partials/header
 		*/
 		do_action( 'karyawp_header' );
 		?>

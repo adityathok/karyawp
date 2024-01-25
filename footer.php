@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php 
 		/** 
 		* karyawp_footer()
-		* template-parts/footer
+		* partials/footer
 		*/
 		do_action( 'karyawp_footer' );
 		?>
