@@ -55,6 +55,7 @@ if (!class_exists('karyawp_WP_Bootstrap_Navwalker')) {
 			$indent = str_repeat($t, $depth);
 			// Default class to add to the file.
 			$classes = array('dropdown-menu rounded-0');
+
 			/**
 			 * Filters the CSS class(es) applied to a menu list element.
 			 *
@@ -81,6 +82,11 @@ if (!class_exists('karyawp_WP_Bootstrap_Navwalker')) {
 				// build a string to use as aria-labelledby.
 				$labelledby = 'aria-labelledby="' . end($matches[2]) . '"';
 			}
+			
+			if($depth > 0) {
+				$labelledby .= 'data-depth="'.$depth.'"';
+			}
+
 			$output .= "{$n}{$indent}<ul$class_names $labelledby >{$n}";
 		}
 

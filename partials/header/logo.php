@@ -23,9 +23,6 @@
 
 <?php
 } else {
-    $custom_logo_id = get_theme_mod( 'custom_logo' );
-    echo '<a class="navbar-brand" rel="home" href="' . esc_url( home_url( '/' ) ) . '">';
-        echo wp_get_attachment_image( $custom_logo_id, array('700', '600'), "", array( "class" => "img-responsive" ) );
-    echo '</a>';
+    the_custom_logo();
 }
 ?>

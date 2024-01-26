@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <header id="site-header" class="site-header" role="banner">
 
-    <nav id="navbar-main" class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Main navigation">
+    <nav id="navbar-main" class="navbar navbar-expand-lg bg-body shadow-sm" aria-label="Main navigation">
 
         <div class="container">                        
 

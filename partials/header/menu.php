@@ -18,7 +18,7 @@ wp_nav_menu(
         'menu_class'      => 'navbar-nav',
         'fallback_cb'     => '',
         'menu_id'         => 'main-menu',
-        'depth'           => 2,
+        'depth'           => 3,
         'walker'          => new karyawp_WP_Bootstrap_Navwalker(),
     )
 );
