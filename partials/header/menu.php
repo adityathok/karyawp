@@ -13,7 +13,7 @@
 wp_nav_menu(
     array(
         'theme_location'  => 'primary',
-        'container_class' => 'd-flex justify-content-md-end flex-grow-1 pe-2',
+        'container_class' => '',
         'container_id'    => 'primary-menu',
         'menu_class'      => 'navbar-nav',
         'fallback_cb'     => '',

@@ -16,7 +16,7 @@ $size = isset($args['size']) && !empty($args['size'])?$args['size']:'';
 
 	<label class="screen-reader-text" for="<?php echo $uid; ?>"><?php echo esc_html_x('Search for:', 'label', 'karyawp'); ?></label>
 
-	<div class="input-group bg-light border rounded position-relative overflow-hidden">
+	<div class="input-group border position-relative overflow-hidden">
 
         <?php 
         switch ($size) {
@@ -30,7 +30,7 @@ $size = isset($args['size']) && !empty($args['size'])?$args['size']:'';
               $form_input = 'form-control';
         }
         ?>
-		<input type="search" class="field search-field <?php echo $form_input ; ?> bg-light border-0 rounded-0" id="<?php echo $uid; ?>" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'karyawp'); ?>">
+		<input type="search" class="field search-field <?php echo $form_input ; ?> bg-transparent border-0 rounded-0" id="<?php echo $uid; ?>" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'karyawp'); ?>">
 		
         <?php 
         switch ($size) {
@@ -44,7 +44,7 @@ $size = isset($args['size']) && !empty($args['size'])?$args['size']:'';
               $svg_size = 12;
         }
         ?>
-        <button class="submit search-submit btn btn-light" type="submit">
+        <button class="submit search-submit btn bg-transparent border-0 rounded-0" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="<?php echo $svg_size ; ?>" height="<?php echo $svg_size ; ?>" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>

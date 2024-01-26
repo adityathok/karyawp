@@ -18,7 +18,6 @@ defined( 'ABSPATH' ) || exit;
             <?php
                 get_template_part( 'partials/header/logo' );
             ?>
-            <!-- site-branding -->
 
             <button class="navbar-toggler border-0 rounded-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavigation" aria-controls="offcanvasNavigation" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,22 +38,29 @@ defined( 'ABSPATH' ) || exit;
 
                 <div class="offcanvas-body">
 
-                    <?php
-                        get_template_part( 'partials/header/menu' );
-                    ?>
-                    <!-- site-navigation -->
-
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-lg-end flex-grow-1 pe-2">
                         <?php
-                            get_template_part( 'partials/header/search' );
+                            get_template_part( 'partials/header/menu' );
                         ?>
-                        <!-- -search-form-navigation -->
-
-                        <?php
-                            get_template_part( 'partials/header/darkmode' );
-                        ?>
-                        <!-- -darkmode-navigation -->
                     </div>
+
+                    <hr class="d-lg-none text-secondary">
+
+                    <ul class="navbar-nav flex-row flex-wrap justify-content-between ms-lg-auto mt-4 mt-md-0">
+                        <li class="nav-item d-lg-none">
+                            <?php echo get_search_form(array('size' => 'normal')); ?>
+                        </li>
+                        <li class="nav-item d-none d-md-flex">
+                            <?php
+                                get_template_part( 'partials/header/search' );
+                            ?>
+                        </li>
+                        <li class="nav-item">
+                            <?php
+                                get_template_part( 'partials/header/darkmode' );
+                            ?>
+                        </li>
+                    </ul>
 
                 </div>
 
