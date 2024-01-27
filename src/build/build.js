@@ -1,7 +1,8 @@
-import * as fs from 'node:fs/promises';
-import {join} from 'path';
-import zipdir from 'zip-dir';
-import {deleteAsync} from 'del';
+const { promises: fs } = require("fs");
+const zipdir = require("zip-dir");
+const path = require("path");
+const join = path.join;
+const del = require("del");
 
 async function copyDir(src, dest) {
   await fs.mkdir(dest, { recursive: true });
@@ -42,7 +43,7 @@ async function copyDir(src, dest) {
   }
 }
 
-deleteAsync(['dist','assets/karyawp.cjs']).then( async() => {
+del(['dist','assets/karyawp.cjs']).then( async() => {
     console.log('delete folder dist');
     copyDir("./", "./dist/karyawp").then(() => {  
         console.log('copy folder dist'); 

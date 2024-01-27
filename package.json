@@ -3,10 +3,9 @@
   "version": "0.0.1",
   "description": "A WordPress starter theme framework",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "build": "vite build",
-    "watch": "vite build --watch",
+    "build": "webpack build --mode=production",
+    "watch": "webpack build --watch",
     "dist-clean": "node src/build/clean.js",
     "dist-build": "node src/build/build.js"
   },
@@ -20,9 +19,19 @@
   "author": "adityathok",
   "license": "ISC",
   "devDependencies": {
-    "del": "^7.1.0",
-    "sass": "^1.69.5",
-    "vite": "^5.0.4",
+    "autoprefixer": "^10.4.17",
+    "css-loader": "^6.9.1",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "del": "^6.0.0",
+    "mini-css-extract-plugin": "^2.7.7",
+    "postcss-loader": "^8.0.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.0.0",
+    "style-loader": "^3.3.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
     "zip-dir": "^2.0.0"
   },
   "dependencies": {
