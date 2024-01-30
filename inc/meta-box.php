@@ -59,17 +59,7 @@ class KaryaWP_Metabox_Page {
     {
         $value      = get_post_meta($post->ID, 'karyawp_navbar_overlay', true);
         $value_pt   = get_post_meta($post->ID, 'karyawp_page_title', true);
-        $container  = get_post_meta($post->ID, 'karyawp_page_container', true);
         ?>
-        <div>
-            <label for="karyawp_page_container">Container type :</label>
-            <select name="karyawp_page_container" id="karyawp_page_container" class="postbox">
-                <option value="">Default</option>
-                <option value="fullwidth" <?php selected($container, 'fullwidth'); ?>>Full Width</option>
-                <option value="fluid" <?php selected($container, 'fluid'); ?>>Fluid</option>
-                <option value="canvas" <?php selected($container, 'canvas'); ?>>Canvas</option>
-            </select>
-        </div>
         <div>
             <label for="karyawp_navbar_overlay">Navbar Overlay :</label>
             <select name="karyawp_navbar_overlay" id="karyawp_navbar_overlay" class="postbox">

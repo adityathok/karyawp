@@ -29,7 +29,7 @@ if (!function_exists('karyawp_open_content')) {
 		) {
 			return;
 		}
-        echo '<div class="container container-content py-3">';
+        echo '<div class="container container-content">';
     }
 }
 ///close content container
@@ -59,6 +59,7 @@ if (!function_exists('karyawp_open_content_wrapper')) {
         if (
 			is_page_template(
 				array(
+					'page-templates/full.php',
 					'page-templates/fullwidth.php',
 					'page-templates/canvas.php',
 				)
@@ -77,6 +78,7 @@ if (!function_exists('karyawp_close_content_wrapper')) {
         if (
 			is_page_template(
 				array(
+					'page-templates/full.php',
 					'page-templates/fullwidth.php',
 					'page-templates/canvas.php',
 				)
@@ -108,6 +110,7 @@ if (!function_exists('karyawp_sidebar_left')) {
         if (
 			is_page_template(
 				array(
+					'page-templates/full.php',
 					'page-templates/fullwidth.php',
 					'page-templates/canvas.php',
 				)
@@ -131,6 +134,7 @@ if (!function_exists('karyawp_sidebar_right')) {
         if (
 			is_page_template(
 				array(
+					'page-templates/full.php',
 					'page-templates/fullwidth.php',
 					'page-templates/canvas.php',
 				)
@@ -138,6 +142,7 @@ if (!function_exists('karyawp_sidebar_right')) {
 		) {
 			return;
 		}
+
             echo '</div>'; /// end column content
             echo '<div class="col-md-4 col-xl-3">';
                 get_template_part( 'partials/sidebar' );

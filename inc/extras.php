@@ -30,6 +30,7 @@ if ( ! function_exists( 'karyawp_body_classes' ) ) {
 		if (
 			is_page_template(
 				array(
+					'page-templates/full.php',
 					'page-templates/fullwidth.php',
 					'page-templates/canvas.php',
 				)
