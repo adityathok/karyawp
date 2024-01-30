@@ -20,8 +20,10 @@ $karyawp_includes = array(
 	'/extras.php',                          		/// Custom functions that act independently of the theme templates.
 	'/setup.php',           						/// Theme setup and custom theme supports.
 	'/class-wp-bootstrap-navwalker.php',           	/// WP Bootstrap Navwalker.
-	'/pagination.php',           					/// Custom pagination for this theme..
+	'/pagination.php',           					/// Custom pagination for this theme.
 	'/enqueue.php',         						/// Enqueue scripts and styles.
+	'/block-editor.php',         					/// Block editor (gutenberg) specific functionality
+	'/meta-box.php',         						/// Custom Meta box for themes
 	'/widgets.php',	 								/// Declaring widgets
 	'/custom-comments.php',							/// Layouting Comments Form
 	'/layouts.php',	 								/// Layouting hooks

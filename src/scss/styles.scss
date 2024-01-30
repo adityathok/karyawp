@@ -5,6 +5,7 @@
 @import "bootstrap/scss/bootstrap";
 
 // add style for wordpress
+@import "theme/block"; 
 @import "theme/comment"; 
 @import "theme/contact-form7"; 
 @import "theme/widget"; 

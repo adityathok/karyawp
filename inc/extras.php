@@ -26,6 +26,23 @@ if ( ! function_exists( 'karyawp_body_classes' ) ) {
 			$classes[] = 'hfeed';
 		}
 
+		// check Page Templates
+		if (
+			is_page_template(
+				array(
+					'page-templates/fullwidth.php',
+					'page-templates/canvas.php',
+				)
+			)
+		) {
+			$classes[] = 'no-sidebar';
+		}
+
+		// check sidebar
+		if ( ! is_active_sidebar( 'main-sidebar' ) ) {
+			$classes[] = 'no-sidebar';
+		}
+
 		return $classes;
 	}
     add_filter( 'body_class', 'karyawp_body_classes' );
