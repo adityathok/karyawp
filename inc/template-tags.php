@@ -34,6 +34,20 @@ if ( ! function_exists( 'karyawp_body_attributes' ) ) {
 	}
 }
 
+if (!function_exists('karyawp_data_bs_theme')) {
+	/**
+	 * Bootstrap color mode / dark mode
+	 */
+	function karyawp_data_bs_theme($atts) {
+		$cookie_name 	= "data_bs_theme";
+		$colormode		= isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : 'light';
+		$colormode		= $colormode == 'dark' ? 'dark' : 'light';
+		$atts['data-bs-theme'] = $colormode;
+		return $atts;
+	}
+	add_filter( 'karyawp_body_attributes', 'karyawp_data_bs_theme' );
+}
+
 if ( ! function_exists( 'karyawp_entry_meta' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
