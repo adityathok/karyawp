@@ -1,5 +1,5 @@
-/*
-* Use existing Bootstrap 4/5 classes and
+/**
+* Use existing Bootstrap 5 classes and
 * variables to extend - override CF7 style
 *
 * Useful CF7 classes:
@@ -10,7 +10,7 @@
 * .wpcf7-email
 * .wpcf7-textarea
 * .wpcf7-submit
-*/
+**/
 
 // keep a max width in case it is just the form and nothing else
 // we do not want a form spanning whole page
@@ -35,9 +35,12 @@
   input[type=email],
   input[type=file],
   input[type=submit],
-  select,
   textarea {
     @extend .form-control;
+  }
+
+  select {
+    @extend .form-select;
   }
 
   // submit button, inherit .btn and .btn-outline-primary classes.

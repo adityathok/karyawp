@@ -89,3 +89,103 @@ if ( ! function_exists( 'karyawp_entry_meta' ) ) {
 
 	}
 }
+
+
+if ( ! function_exists( 'karyawp_comment_navigation' ) ) {
+	/**
+	 * Displays the comment navigation.
+	 *
+	 * @param string $nav_id The ID of the comment navigation.
+	 */
+	function karyawp_comment_navigation( $nav_id ) {
+		if ( get_comment_pages_count() <= 1 ) {
+			// Return early if there are no comments to navigate through.
+			return;
+		}
+		?>
+		<nav class="comment-navigation" id="<?php echo esc_attr( $nav_id ); ?>">
+
+			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'wpzaro' ); ?></h1>
+
+			<?php if ( get_previous_comments_link() ) { ?>
+				<div class="nav-previous">
+					<?php previous_comments_link( __( '&larr; Older Comments', 'wpzaro' ) ); ?>
+				</div>
+			<?php } ?>
+
+			<?php if ( get_next_comments_link() ) { ?>
+				<div class="nav-next">
+					<?php next_comments_link( __( 'Newer Comments &rarr;', 'wpzaro' ) ); ?>
+				</div>
+			<?php } ?>
+
+		</nav><!-- #<?php echo esc_attr( $nav_id ); ?> -->
+		<?php
+	}
+}
+
+if ( ! function_exists( 'karyawp_edit_post_link' ) ) {
+	/**
+	 * Displays the edit post link for post.
+	 */
+	function karyawp_edit_post_link() {
+		edit_post_link(
+			sprintf(
+				/* translators: %s: Name of current post */
+				esc_html__( 'Edit %s', 'wpzaro' ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	}
+}
+
+if ( ! function_exists( 'karyawp_post_nav' ) ) {
+	/**
+	 * Display navigation to next/previous post when applicable.
+	 */
+	function karyawp_post_nav() {
+		// Don't print empty markup if there's nowhere to navigate.
+		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+		$next     = get_adjacent_post( false, '', false );
+		if ( ! $next && ! $previous ) {
+			return;
+		}
+		?>
+		<nav class="container navigation post-navigation">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'wpzaro' ); ?></h2>
+			<div class="d-flex nav-links justify-content-between">
+				<?php
+				if ( get_previous_post_link() ) {
+					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg>&nbsp;%title', 'Previous post link', 'wpzaro' ) );
+				}
+				if ( get_next_post_link() ) {
+					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/> </svg>', 'Next post link', 'wpzaro' ) );
+				}
+				?>
+			</div><!-- .nav-links -->
+		</nav><!-- .navigation -->
+		<?php
+	}
+}
+
+if ( ! function_exists( 'karyawp_link_pages' ) ) {
+	/**
+	 * Displays/retrieves page links for paginated posts (i.e. including the
+	 * `<!--nextpage-->` Quicktag one or more times). This tag must be
+	 * within The Loop. Default: echo.
+	 *
+	 * @return void|string Formatted output in HTML.
+	 */
+	function karyawp_link_pages() {
+		$args = apply_filters(
+			'karyawp_link_pages_args',
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wpzaro' ),
+				'after'  => '</div>',
+			)
+		);
+		wp_link_pages( $args );
+	}
+}
