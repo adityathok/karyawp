@@ -34,3 +34,9 @@
 	@extend .mx-auto;
 	display: block;
 }
+
+.entry-content {
+	img {		
+		max-width: 100%;
+	}
+}

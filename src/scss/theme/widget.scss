@@ -1,21 +1,21 @@
 // widget wordpress
 .widget {
-    margin-bottom: 2rem;
+    @extend .mb-4;
     ul {
-        padding-left: 1.5rem;
-        margin: 0;
+        @extend .ps-4;
+        @extend .m-0;
     }
 }
 
 // widget calendar
 .widget_calendar {
     .wp-calendar-table {
-        @extend .table;   
-        thead {
-            @extend .table-dark;
-            th {
-                @extend .border-dark;
-            }
+        @extend .table; 
+        th {
+            @extend .bg-transparent;
+        }
+        td {            
+            @extend .bg-transparent;
         }
     }
 }
@@ -25,26 +25,25 @@
     ul {
         @extend .list-unstyled;
         li:not(:last-child) {
-            margin-bottom: 0.25em;
+            @extend .mb-1;
         }
         a {
-            display: block;
+            @extend .d-block;
         }
         .post-date {
-            font-size: 90%;
-            display: block;
+            @extend .small;
+            @extend .d-block;
         }
     }
 }
 
 //widget tags cluod
 .tag-cloud-link {
-    font-size: .875rem !important;
-    margin: 0 0.3rem 0.3rem 0;
     @extend .btn;      
     @extend .btn-sm;
     @extend .btn-secondary;
     @extend .text-light;
+    @extend .small;
 }
 .widget_tag_cloud {
     .tag-cloud-link, a {  
