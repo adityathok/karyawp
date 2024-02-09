@@ -22,14 +22,25 @@ if (!function_exists('karyawp_open_content')) {
         if (
 			is_page_template(
 				array(
-					'page-templates/fullwidth.php',
 					'page-templates/canvas.php',
 				)
 			)
 		) {
 			return;
 		}
-        echo '<div class="container container-content">';
+
+        if (
+			is_page_template(
+				array(
+					'page-templates/empty.php',
+				)
+			)
+		) {
+            echo '<div class="'.karyawp_container_type().' container-content">';
+		} else {
+            echo '<div class="'.karyawp_container_type().' container-content py-5">';
+        }
+
     }
 }
 ///close content container
@@ -40,46 +51,6 @@ if (!function_exists('karyawp_close_content')) {
         if (
 			is_page_template(
 				array(
-					'page-templates/fullwidth.php',
-					'page-templates/canvas.php',
-				)
-			)
-		) {
-			return;
-		}
-        echo '</div>';
-    }
-}
-
-///Open content wrapper
-if (!function_exists('karyawp_open_content_wrapper')) {
-    add_action('karyawp_content_before', 'karyawp_open_content_wrapper', 19);
-    function karyawp_open_content_wrapper()
-    {
-        if (
-			is_page_template(
-				array(
-					'page-templates/full.php',
-					'page-templates/fullwidth.php',
-					'page-templates/canvas.php',
-				)
-			)
-		) {
-			return;
-		}
-        echo '<div class="content-wrapper py-3 py-md-5">';
-    }
-}
-///close content wrapper
-if (!function_exists('karyawp_close_content_wrapper')) {
-    add_action('karyawp_content_after', 'karyawp_close_content_wrapper', 21);
-    function karyawp_close_content_wrapper()
-    {
-        if (
-			is_page_template(
-				array(
-					'page-templates/full.php',
-					'page-templates/fullwidth.php',
 					'page-templates/canvas.php',
 				)
 			)
@@ -104,22 +75,13 @@ if (!function_exists('karyawp_sidebar_left')) {
     add_action('karyawp_content_before', 'karyawp_sidebar_left', 21);
     function karyawp_sidebar_left()
     {
-        if ( ! is_active_sidebar( 'main-sidebar' ) ) {
+		$sidebar_position = karyawp_sidebar_position();
+
+        if ( ! is_active_sidebar( 'main-sidebar' ) || $sidebar_position == 'disable' ) {
             return;
         }
-        if (
-			is_page_template(
-				array(
-					'page-templates/full.php',
-					'page-templates/fullwidth.php',
-					'page-templates/canvas.php',
-				)
-			)
-		) {
-			return;
-		}
 
-        echo '<div class="row">';
+        echo '<div class="row '.($sidebar_position == 'right' ? 'flex-row' : 'flex-md-row-reverse').'">';
             echo '<div class="col-md-8 col-xl-9">';
     }
 }
@@ -128,25 +90,18 @@ if (!function_exists('karyawp_sidebar_right')) {
     add_action('karyawp_content_after', 'karyawp_sidebar_right', 19);
     function karyawp_sidebar_right()
     {
-        if ( ! is_active_sidebar( 'main-sidebar' ) ) {
+		$sidebar_position = karyawp_sidebar_position();
+
+        if ( ! is_active_sidebar( 'main-sidebar' ) || $sidebar_position == 'disable' ) {
             return;
         }
-        if (
-			is_page_template(
-				array(
-					'page-templates/full.php',
-					'page-templates/fullwidth.php',
-					'page-templates/canvas.php',
-				)
-			)
-		) {
-			return;
-		}
 
             echo '</div>'; /// end column content
+
             echo '<div class="col-md-4 col-xl-3">';
                 get_template_part( 'partials/sidebar' );
             echo '</div>';
+			
         echo '</div>'; // end ROW
     }
 }

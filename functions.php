@@ -27,6 +27,7 @@ $karyawp_includes = array(
 	'/widgets.php',	 								/// Declaring widgets
 	'/custom-comments.php',							/// Layouting Comments Form
 	'/layouts.php',	 								/// Layouting hooks
+	'/plugins/kirki.php',							/// Kirki Customizer
 );
 
 // Include files.

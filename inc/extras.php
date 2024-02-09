@@ -25,19 +25,11 @@ if ( ! function_exists( 'karyawp_body_classes' ) ) {
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
 		}
-
-		// check Page Templates
-		if (
-			is_page_template(
-				array(
-					'page-templates/full.php',
-					'page-templates/fullwidth.php',
-					'page-templates/canvas.php',
-				)
-			)
-		) {
+	
+		$sidebar_position = karyawp_sidebar_position();		
+        if ( $sidebar_position == 'disable' ) {
 			$classes[] = 'no-sidebar';
-		}
+        }
 
 		// check sidebar
 		if ( ! is_active_sidebar( 'main-sidebar' ) ) {

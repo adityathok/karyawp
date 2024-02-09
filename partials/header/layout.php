@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
     <nav id="navbar-main" class="navbar navbar-expand-lg bg-body shadow-sm" aria-label="Main navigation">
 
-        <div class="container">                        
+        <div class="<?php echo karyawp_container_type('header');?>">                        
 
             <?php
                 get_template_part( 'partials/header/logo' );

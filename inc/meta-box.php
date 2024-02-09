@@ -48,6 +48,13 @@ class KaryaWP_Metabox_Page {
                 $_POST['karyawp_page_title']
             );
         }
+        if (array_key_exists('karyawp_sidebar_position', $_POST)) {
+            update_post_meta(
+                $post_id,
+                'karyawp_sidebar_position',
+                $_POST['karyawp_sidebar_position']
+            );
+        }
     }
     
     /**
@@ -57,22 +64,24 @@ class KaryaWP_Metabox_Page {
      */
     public static function html($post)
     {
-        $value      = get_post_meta($post->ID, 'karyawp_navbar_overlay', true);
-        $value_pt   = get_post_meta($post->ID, 'karyawp_page_title', true);
+        $karyawp_navbar_overlay     = get_post_meta($post->ID, 'karyawp_navbar_overlay', true);
+        $karyawp_sidebar_position   = get_post_meta($post->ID, 'karyawp_sidebar_position', true);
         ?>
         <div>
             <label for="karyawp_navbar_overlay">Navbar Overlay :</label>
             <select name="karyawp_navbar_overlay" id="karyawp_navbar_overlay" class="postbox">
                 <option value="">Default</option>
-                <option value="enable" <?php selected($value, 'enable'); ?>>Enable</option>
-                <option value="disable" <?php selected($value, 'disable'); ?>>Disable</option>
+                <option value="enable" <?php selected($karyawp_navbar_overlay, 'enable'); ?>>Enable</option>
+                <option value="disable" <?php selected($karyawp_navbar_overlay, 'disable'); ?>>Disable</option>
             </select>
         </div>
         <div>
-            <label for="karyawp_page_title">Page Title :</label>
-            <select name="karyawp_page_title" id="karyawp_page_title" class="postbox">
+            <label for="karyawp_sidebar_position">Sidebar Position :</label>
+            <select name="karyawp_sidebar_position" id="karyawp_sidebar_position" class="postbox">
                 <option value="">Default</option>
-                <option value="hide" <?php selected($value_pt, 'hide'); ?>>Hide</option>
+                <option value="right" <?php selected($karyawp_sidebar_position, 'right'); ?>>right</option>
+                <option value="left" <?php selected($karyawp_sidebar_position, 'left'); ?>>Left</option>
+                <option value="disable" <?php selected($karyawp_sidebar_position, 'disable'); ?>>Disable</option>
             </select>
         </div>
         <?php

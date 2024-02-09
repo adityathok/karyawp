@@ -147,6 +147,56 @@ if ( ! function_exists( 'karyawp_link_pages' ) ) {
 	}
 }
 
+if ( ! function_exists( 'karyawp_container_type' ) ) {
+	/**
+	 * Prints HTML class for type container.
+	 */
+	function karyawp_container_type($layout = null) {
+		$container = get_theme_mod( 'karyawp_container_type', 'container' );
+
+		$container = apply_filters( 'karyawp_container_type', $container );
+
+		return esc_html__( $container );
+	}
+}
+
+if ( ! function_exists( 'karyawp_sidebar_position' ) ) {
+	/**
+	 * Options for sidebar position
+	 */
+	function karyawp_sidebar_position($layout = null) {
+
+		// Customizer
+		$sidebar_position = get_theme_mod( 'karyawp_sidebar_position', 'right' );
+			
+		//is page
+		if(is_page()) {
+			// page template
+			if (
+				is_page_template(
+					array(
+						'page-templates/empty.php',
+						'page-templates/canvas.php',
+					)
+				)
+			) {
+				$sidebar_position = 'disable';
+			}
+
+			$sidebar_page = get_post_meta(get_the_ID(),'karyawp_sidebar_position',true);
+			if($sidebar_page){
+				$sidebar_position = $sidebar_page;
+			}
+
+		}
+
+		$sidebar_position = apply_filters( 'karyawp_sidebar_position', $sidebar_position );
+
+		return $sidebar_position;
+	}
+}
+
+
 if ( ! function_exists( 'karyawp_entry_meta' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
