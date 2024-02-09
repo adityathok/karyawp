@@ -3,6 +3,11 @@
     .comment-list {        
         @extend .list-group;
         @extend .list-group-flush;
+        .children {
+            @extend .list-group;
+            @extend .list-group-flush;
+            @extend .ps-3;
+        }
         .comment {
             @extend .list-group-item;
             @extend .px-0;
@@ -18,16 +23,16 @@
                         @extend .d-none;
                     }
                 }
-            }
-            .comment-content {
-                @extend .ps-5;
+                .comment-metadata {
+                    @extend .small;
+                }
             }
             .reply {
                 @extend .text-end;
                 a {
                     @extend .btn;
                     @extend .btn-sm;
-                    @extend .btn-outline-secondary;
+                    @extend .btn-link;
                 }
             }
         }
