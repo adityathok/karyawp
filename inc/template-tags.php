@@ -79,6 +79,8 @@ if ( ! function_exists( 'karyawp_entry_meta' ) ) {
 			)
 		);
 
+		$post_meta = [$post_date,$post_author];
+
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			$post_comments = '<span class="post-meta-comments">';
 			$post_comments .= sprintf(
@@ -88,9 +90,10 @@ if ( ! function_exists( 'karyawp_entry_meta' ) ) {
 				get_comments_number()
 			);
 			$post_comments .= '</span>';
-		}
 
-		$post_meta = [$post_date,$post_author,$post_comments];
+			array_push($post_meta,$post_comments);
+
+		}
 
 		$post_meta_separator = apply_filters(
 			'karyawp_entry_meta_separator',
