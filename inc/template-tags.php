@@ -48,64 +48,6 @@ if (!function_exists('karyawp_data_bs_theme')) {
 	add_filter( 'karyawp_body_attributes', 'karyawp_data_bs_theme' );
 }
 
-if ( ! function_exists( 'karyawp_entry_meta' ) ) {
-	/**
-	 * Prints HTML with meta information for the current post-date/time and author.
-	 */
-	function karyawp_entry_meta() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		$time_string = sprintf(
-			$time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() )
-		);
-
-		$post_date = apply_filters(
-			'karyawp_entry_meta_date',
-			sprintf(
-				'<span class="post-meta-date">%1$s</span>',
-				apply_filters( 'karyawp_posted_on_time', $time_string )
-			)
-		);
-		$post_author = apply_filters(
-			'karyawp_entry_meta_author',
-			sprintf(
-				'<span class="post-meta-author"><span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span></span>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_html( get_the_author() )
-			)
-		);
-
-		$post_meta = [$post_date,$post_author];
-
-		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			$post_comments = '<span class="post-meta-comments">';
-			$post_comments .= sprintf(
-				'<a class="url fn n" href="%1$s">%2$s %3$s</a>',
-				esc_url( get_the_permalink().'#comments' ),
-				get_comments_number(),
-				get_comments_number() == 1 ? esc_html__( 'Comment', 'karyawp' ) : esc_html__( 'Comments', 'karyawp' )
-			);
-			$post_comments .= '</span>';
-
-			array_push($post_meta,$post_comments);
-
-		}
-
-		$post_meta_separator = apply_filters(
-			'karyawp_entry_meta_separator',
-			sprintf(
-				'<span class="post-meta-separator px-2">·</span>',
-			)
-		);
-		
-		$post_meta = apply_filters('karyawp_entry_meta',$post_meta);
-
-		echo '<span class="karyawp_entry_meta">'.implode($post_meta_separator,$post_meta).'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
-	}
-}
-
 if ( ! function_exists( 'karyawp_comment_navigation' ) ) {
 	/**
 	 * Displays the comment navigation.
@@ -202,5 +144,92 @@ if ( ! function_exists( 'karyawp_link_pages' ) ) {
 			)
 		);
 		wp_link_pages( $args );
+	}
+}
+
+if ( ! function_exists( 'karyawp_entry_meta' ) ) {
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function karyawp_entry_meta() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		$time_string = sprintf(
+			$time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() )
+		);
+
+		$post_date = apply_filters(
+			'karyawp_entry_meta_date',
+			sprintf(
+				'<span class="post-meta-date">%1$s</span>',
+				apply_filters( 'karyawp_posted_on_time', $time_string )
+			)
+		);
+		$post_author = apply_filters(
+			'karyawp_entry_meta_author',
+			sprintf(
+				'<span class="post-meta-author"><span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span></span>',
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_html( get_the_author() )
+			)
+		);
+
+		$post_meta = [$post_date,$post_author];
+
+		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			$post_comments = '<span class="post-meta-comments">';
+			$post_comments .= sprintf(
+				'<a class="url fn n" href="%1$s">%2$s %3$s</a>',
+				esc_url( get_the_permalink().'#comments' ),
+				get_comments_number(),
+				get_comments_number() == 1 ? esc_html__( 'Comment', 'karyawp' ) : esc_html__( 'Comments', 'karyawp' )
+			);
+			$post_comments .= '</span>';
+
+			array_push($post_meta,$post_comments);
+
+		}
+
+		$post_meta_separator = apply_filters(
+			'karyawp_entry_meta_separator',
+			sprintf(
+				'<span class="post-meta-separator px-2">·</span>',
+			)
+		);
+		
+		$post_meta = apply_filters('karyawp_entry_meta',$post_meta);
+
+		return '<span class="karyawp_entry_meta">'.implode($post_meta_separator,$post_meta).'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+	}
+}
+
+if ( ! function_exists( 'karyawp_entry_thumbnail' ) ) {
+	/**
+	 * Prints HTML with thumbnail for the current post.
+	 */
+	function karyawp_entry_thumbnail($args = null) {
+
+		// size thumbnail for post
+		$size   = isset( $args['size'] ) ? $args['size'] : 'medium';
+
+		//ratio bootstrap 5
+		$ratio      = isset( $args['ratio'] ) ? $args['ratio'] : '';
+		$ratio_def  = ['1x1', '4x3', '16x9', '21x9'];
+		$is_ratio   = in_array( $ratio, $ratio_def );
+
+		$image	= get_the_post_thumbnail( get_the_ID(), $size, array( 'class' => 'img-fluid w-100' ) );
+
+		$html = '';
+		$html .= sprintf(
+			'<a href="%1$s" title="%2$s">%3$s</a>',
+			esc_url( get_the_permalink() ),
+			esc_html__( get_the_title() ),
+			( $is_ratio ) ? '<div class="ratio ratio-4x3 bg-light">'.$image.'</div>' : $image
+		);
+
+		return $html;
+
 	}
 }

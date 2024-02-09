@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Blog Index
+ * Blog Index
  * Description: The template for displaying the Blog index /blog.
  *
  * @package karyawp
@@ -21,10 +21,10 @@ get_header();
                 // Start the Loop.
                 while ( have_posts() ) {
                     the_post();
-                    get_template_part( 'partials/content/layout', get_post_format() );
+                    get_template_part( 'partials/content/content', get_post_format() );
                 }
             } else {
-                get_template_part( 'partials/none' );
+                get_template_part( 'partials/content/none' );
             }
             ?>
 

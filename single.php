@@ -1,7 +1,6 @@
 <?php
 /**
- * Template Name: Single
- * Description: The template for displaying the Post.
+ * Description: The template for displaying the Singular.
  *
  * @package karyawp
  */

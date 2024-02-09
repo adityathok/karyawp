@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page
+ * Singular Page
  * Description: The template for displaying the Page.
  *
  * @package karyawp
