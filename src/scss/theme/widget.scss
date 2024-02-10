@@ -7,19 +7,6 @@
     }
 }
 
-// widget calendar
-.widget_calendar {
-    .wp-calendar-table {
-        @extend .table; 
-        th {
-            @extend .bg-transparent;
-        }
-        td {            
-            @extend .bg-transparent;
-        }
-    }
-}
-
 //widget recent posts
 .widget_recent_entries {
     ul {

@@ -13,6 +13,7 @@
             @extend .px-0;
             .comment-meta {
                 @extend .clearfix;
+                @extend .mb-2;
                 .comment-author {
                     .avatar {
                         @extend .rounded;
@@ -27,18 +28,21 @@
                     @extend .small;
                 }
             }
+            .comment-content {
+                @extend .ps-4;
+            }
             .reply {
                 @extend .text-end;
                 a {
                     @extend .btn;
                     @extend .btn-sm;
-                    @extend .btn-link;
+                    @extend .btn-outline-secondary;
                 }
             }
         }
         .comment-respond {
             @extend .p-3;
-            @extend .bg-light;
+            @extend .text-bg-light;
             #cancel-comment-reply-link {
                 @extend .btn;
                 @extend .btn-sm;

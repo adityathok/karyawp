@@ -14,13 +14,13 @@ defined( 'ABSPATH' ) || exit;
 
     <div class="row">
 
-        <div class="col-md-4 col-xl-3">
+        <div class="col-md-5 col-xl-4">
             <?php
                 echo karyawp_entry_thumbnail(['size' => 'large', 'ratio' => '4x3']);
             ?>
         </div>
 
-        <div class="col-md-8 col-xl-9 mt-2 mt-md-0">  
+        <div class="col-md-7 col-xl-8 mt-2 mt-md-0">  
 
             <header class="entry-header">
                 <?php
