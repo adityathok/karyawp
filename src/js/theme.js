@@ -13,4 +13,13 @@ jQuery(document).ready(function ($) {
             $('.btn-darkmode .darkmode-dark').hide();
         }
     });
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > $('#site-header').height()) {
+          $("body").addClass("is-scrolled");
+          $("body.admin-bar #site-header").css("transform", "translateY(32px)");
+        } else {
+          $("body").removeClass("is-scrolled");
+          $("body.admin-bar #site-header").css("transform", "translateY(0px)");
+        }
+    });
 });

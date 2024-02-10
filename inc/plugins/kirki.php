@@ -88,3 +88,25 @@ new \Kirki\Field\Select(
 		],
 	]
 );
+// new \Kirki\Field\Checkbox(
+// 	[
+// 		'settings'    => 'karyawp_header_sticky',
+// 		'label'       => esc_html__( 'Sticky Header', 'kirki' ),
+// 		'description' => esc_html__( 'Enable sticky header', 'kirki' ),
+// 		'section'     => 'karyawp_layout_section',
+// 		'default'     => true,
+// 	]
+// );
+new \Kirki\Field\Radio_Buttonset(
+	[
+		'settings'    => 'karyawp_header_sticky',
+		'label'       => esc_html__( 'Sticky Header', 'kirki' ),
+		'section'     => 'karyawp_layout_section',
+		'default'     => 1,
+		'priority'    => 10,
+		'choices'     => [
+			0   => esc_html__( 'Disable', 'kirki' ),
+			1   => esc_html__( 'Enable', 'kirki' ),
+		],
+	]
+);

@@ -9,9 +9,9 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<header id="site-header" class="site-header" role="banner">
+<header id="site-header" <?php karyawp_header_attributes(); ?>>
 
-    <nav id="navbar-main" class="navbar navbar-expand-lg bg-body shadow-sm" aria-label="Main navigation">
+    <nav id="navbar-main" class="navbar navbar-expand-lg bg-body shadow-sm " aria-label="Main navigation">
 
         <div class="<?php echo karyawp_container_type('header');?>">                        
 

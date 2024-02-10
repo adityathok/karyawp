@@ -7,6 +7,11 @@
     }
 }
 
+// widget calendar
+.wp-block-calendar table:where(:not(.has-text-color)) {
+    color: initial;
+}
+
 //widget recent posts
 .widget_recent_entries {
     ul {
