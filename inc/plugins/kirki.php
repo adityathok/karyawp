@@ -88,25 +88,102 @@ new \Kirki\Field\Select(
 		],
 	]
 );
-// new \Kirki\Field\Checkbox(
-// 	[
-// 		'settings'    => 'karyawp_header_sticky',
-// 		'label'       => esc_html__( 'Sticky Header', 'kirki' ),
-// 		'description' => esc_html__( 'Enable sticky header', 'kirki' ),
-// 		'section'     => 'karyawp_layout_section',
-// 		'default'     => true,
-// 	]
-// );
 new \Kirki\Field\Radio_Buttonset(
 	[
 		'settings'    => 'karyawp_header_sticky',
-		'label'       => esc_html__( 'Sticky Header', 'kirki' ),
+		'label'       => esc_html__( 'Sticky Header', 'karyawp' ),
 		'section'     => 'karyawp_layout_section',
 		'default'     => 1,
 		'priority'    => 10,
 		'choices'     => [
-			0   => esc_html__( 'Disable', 'kirki' ),
-			1   => esc_html__( 'Enable', 'kirki' ),
+			0   => esc_html__( 'Disable', 'karyawp' ),
+			1   => esc_html__( 'Enable', 'karyawp' ),
 		],
 	]
+);
+
+//Typography Section
+new \Kirki\Section(
+    'karyawp_typography_section',
+    [
+        'title'       => esc_html__('Typography', 'karyawp'),
+        'description' => esc_html__('Typography global settings.', 'karyawp'),
+        'panel'       => 'karyawp_general_panel',
+        'priority'    => 160,
+    ]
+);
+new \Kirki\Field\Typography(
+    [
+        'settings'    => 'karyawp_typography_global',
+        'label'       => esc_html__('Typography', 'karyawp'),
+        'description' => esc_html__('Select typography options', 'karyawp'),
+        'section'     => 'karyawp_typography_section',
+        'priority'    => 10,
+        'transport'   => 'auto',
+        'default'     => [
+            'font-family'     => 'Lato',
+            'variant'         => 'regular',
+            'font-style'      => 'normal',
+            'font-size'       => '1rem',
+            'line-height'     => '1.5',
+            'letter-spacing'  => '0',
+        ],
+        'output'      => [
+            [
+                'element' => 'body,.is-root-container',
+            ],
+        ],
+    ]
+);
+new \Kirki\Field\Color(
+	[
+		'settings'    => 'karyawp_font_color',
+		'label'       => __( 'Font Color', 'karyawp' ),
+		'description' => esc_html__( '', 'karyawp' ),
+		'section'     => 'karyawp_typography_section',
+		'default'     => '#212121',
+        'output'      => [
+            [
+                'choice'    => 'color',
+                'element'   => '[data-bs-theme="light"]',
+                'property'  => '--bs-body-color',
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Multicolor(
+    [
+        'settings'  => 'karyawp_link_color',
+        'label'     => esc_html__('Link Color', 'karyawp'),
+        'section'   => 'karyawp_typography_section',
+        'priority'  => 10,
+        'choices'   => [
+            'color'    => esc_html__('Color', 'karyawp'),
+            'hover'    => esc_html__('Hover', 'karyawp'),
+            'active'   => esc_html__('Active', 'karyawp'),
+        ],
+        'alpha'     => true,
+        'default'   => [
+            'color'  => '#184cdb',
+            'hover'  => '#212121',
+            'active' => '#184cdb',
+        ],
+        'output'    => [
+            [
+                'choice'    => 'color',
+                'element'   => '[data-bs-theme="light"]',
+                'property'  => '--bs-link-color',
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => '[data-bs-theme="light"]',
+                'property'  => '--bs-link-hover-color',
+            ],
+            [
+                'choice'    => 'active',
+                'element'   => '[data-bs-theme="light"]',
+                'property'  => '--bs-link-active-color',
+            ],
+        ],
+    ]
 );
