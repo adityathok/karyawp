@@ -74,7 +74,7 @@ new \Kirki\Field\Select(
         ],
     ]
 );
-new \Kirki\Field\Select(
+new \Kirki\Field\Radio_Buttonset(
 	[
 		'settings'    => 'karyawp_sidebar_position',
 		'label'       => esc_html__( 'Sidebar Position', 'karyawp' ),
@@ -85,19 +85,6 @@ new \Kirki\Field\Select(
 			'right'     => esc_html__( 'Right', 'karyawp' ),
 			'left'      => esc_html__( 'Left', 'karyawp' ),
 			'disable'   => esc_html__( 'Disable', 'karyawp' ),
-		],
-	]
-);
-new \Kirki\Field\Radio_Buttonset(
-	[
-		'settings'    => 'karyawp_header_sticky',
-		'label'       => esc_html__( 'Sticky Header', 'karyawp' ),
-		'section'     => 'karyawp_layout_section',
-		'default'     => 1,
-		'priority'    => 10,
-		'choices'     => [
-			0   => esc_html__( 'Disable', 'karyawp' ),
-			1   => esc_html__( 'Enable', 'karyawp' ),
 		],
 	]
 );
@@ -186,4 +173,47 @@ new \Kirki\Field\Multicolor(
             ],
         ],
     ]
+);
+
+//Header Section
+new \Kirki\Section(
+    'karyawp_header_section',
+    [
+        'title'       => esc_html__('Header', 'karyawp'),
+        'description' => esc_html__('Header settings.', 'karyawp'),
+        'panel'       => 'karyawp_general_panel',
+        'priority'    => 160,
+    ]
+);
+new \Kirki\Field\Radio_Buttonset(
+	[
+		'settings'    => 'karyawp_header_sticky',
+		'label'       => esc_html__( 'Sticky Header', 'karyawp' ),
+		'section'     => 'karyawp_header_section',
+		'default'     => 1,
+		'priority'    => 10,
+		'choices'     => [
+			0   => esc_html__( 'Disable', 'karyawp' ),
+			1   => esc_html__( 'Enable', 'karyawp' ),
+		],
+	]
+);
+new \Kirki\Field\Dimension(
+	[
+		'settings'    => 'karyawp_max_height_logo',
+		'label'       => esc_html__( 'Max Height Logo', 'karyawp' ),
+		'description' => esc_html__( 'Logo size', 'karyawp' ),
+		'section'     => 'karyawp_header_section',
+		'default'     => '3rem',
+		'choices'     => [
+			'accept_unitless' => false,
+		],
+        'transport' => 'auto',
+        'output'    => array(
+            array(
+                'element'  => '#navbar-main .navbar-brand img',
+                'property' => 'max-height'
+            ),
+        ),
+	]
 );
