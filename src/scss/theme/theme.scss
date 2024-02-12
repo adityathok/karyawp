@@ -48,3 +48,9 @@
 a {
 	color: var(--bs-link-color);
 }
+a:hover {
+	--bs-link-color: var(--bs-link-hover-color);
+}
+a:active {
+	--bs-link-color: var(--bs-link-active-color);
+}
