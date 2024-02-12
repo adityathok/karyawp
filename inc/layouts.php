@@ -23,6 +23,7 @@ if (!function_exists('karyawp_open_content')) {
 			is_page_template(
 				array(
 					'page-templates/canvas.php',
+					'page-templates/empty.php',
 				)
 			)
 		) {
@@ -32,7 +33,7 @@ if (!function_exists('karyawp_open_content')) {
         if (
 			is_page_template(
 				array(
-					'page-templates/empty.php',
+					'page-templates/full.php',
 				)
 			)
 		) {

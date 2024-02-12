@@ -34,11 +34,11 @@ class KaryaWP_Metabox_Page {
      */
     public static function save(int $post_id)
     {
-        if (array_key_exists('karyawp_navbar_overlay', $_POST)) {
+        if (array_key_exists('karyawp_header_overlay', $_POST)) {
             update_post_meta(
                 $post_id,
-                'karyawp_navbar_overlay',
-                $_POST['karyawp_navbar_overlay']
+                'karyawp_header_overlay',
+                $_POST['karyawp_header_overlay']
             );
         }
         if (array_key_exists('karyawp_page_title', $_POST)) {
@@ -64,15 +64,15 @@ class KaryaWP_Metabox_Page {
      */
     public static function html($post)
     {
-        $karyawp_navbar_overlay     = get_post_meta($post->ID, 'karyawp_navbar_overlay', true);
+        $karyawp_header_overlay     = get_post_meta($post->ID, 'karyawp_header_overlay', true);
         $karyawp_sidebar_position   = get_post_meta($post->ID, 'karyawp_sidebar_position', true);
         ?>
         <div>
-            <label for="karyawp_navbar_overlay">Navbar Overlay :</label>
-            <select name="karyawp_navbar_overlay" id="karyawp_navbar_overlay" class="postbox">
+            <label for="karyawp_header_overlay">Navbar Overlay :</label>
+            <select name="karyawp_header_overlay" id="karyawp_header_overlay" class="postbox">
                 <option value="">Default</option>
-                <option value="enable" <?php selected($karyawp_navbar_overlay, 'enable'); ?>>Enable</option>
-                <option value="disable" <?php selected($karyawp_navbar_overlay, 'disable'); ?>>Disable</option>
+                <option value="enable" <?php selected($karyawp_header_overlay, 'enable'); ?>>Enable</option>
+                <option value="disable" <?php selected($karyawp_header_overlay, 'disable'); ?>>Disable</option>
             </select>
         </div>
         <div>

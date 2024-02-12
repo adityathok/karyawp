@@ -190,7 +190,20 @@ new \Kirki\Field\Radio_Buttonset(
 		'settings'    => 'karyawp_header_sticky',
 		'label'       => esc_html__( 'Sticky Header', 'karyawp' ),
 		'section'     => 'karyawp_header_section',
-		'default'     => 1,
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => [
+			0   => esc_html__( 'Disable', 'karyawp' ),
+			1   => esc_html__( 'Enable', 'karyawp' ),
+		],
+	]
+);
+new \Kirki\Field\Radio_Buttonset(
+	[
+		'settings'    => 'karyawp_header_overlay',
+		'label'       => esc_html__( 'Overlay Header', 'karyawp' ),
+		'section'     => 'karyawp_header_section',
+		'default'     => '0',
 		'priority'    => 10,
 		'choices'     => [
 			0   => esc_html__( 'Disable', 'karyawp' ),

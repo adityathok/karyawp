@@ -121,6 +121,14 @@ if ( ! function_exists( 'karyawp_header_attributes' ) ) {
 			$atts['class'] = $atts['class'].' sticky-top';
 		}
 
+		$overlay = get_theme_mod( 'karyawp_header_overlay', true );
+		if(is_page()){
+			$overlay = get_post_meta(get_the_ID(),'karyawp_header_overlay',true);
+		}
+		if($overlay){
+			$atts['class'] = $atts['class'].' bg-overlay z-2';
+		}
+
 		$attributes = '';
 		foreach ( $atts as $name => $value ) {
 			if ( $value ) {

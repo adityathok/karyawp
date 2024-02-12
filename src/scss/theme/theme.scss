@@ -41,10 +41,6 @@
 	}
 }
 
-#site-header {
-	transition: all 0.5s;
-}
-
 a {
 	color: var(--bs-link-color);
 }
@@ -53,4 +49,44 @@ a:hover {
 }
 a:active {
 	--bs-link-color: var(--bs-link-active-color);
+}
+
+#site-header {
+	transition: all 0.5s;
+	#navbar-main {
+		transition: all 0.5s;
+	}
+}
+
+body {
+	&:not(.is-scrolled) {
+		#site-header {
+			&.bg-overlay {
+				@extend .position-fixed;
+				@extend .top-0;
+				@extend .start-0;
+				@extend .end-0;
+			}
+			#navbar-main {
+				@extend .bg-transparent;
+				box-shadow: none !important;
+			}
+			.nav-link {
+				@extend .link-light;				
+				&:hover {
+					@extend .link-secondary;
+				}			
+				&:focus {
+					@extend .link-light;
+				}
+			}
+		}
+		&.admin-bar {
+			#site-header {
+				&.bg-overlay {
+					top: 32px !important;
+				}
+			}
+		}
+	}
 }
