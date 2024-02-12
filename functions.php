@@ -17,6 +17,7 @@ $karyawp_inc_dir = 'inc';
 // Array of files to include.
 $karyawp_includes = array(
 	'/template-tags.php',							/// Custom template tags for this theme
+	'/post-tags.php',								/// Custom post tags for this theme
 	'/extras.php',                          		/// Custom functions that act independently of the theme templates.
 	'/setup.php',           						/// Theme setup and custom theme supports.
 	'/class-wp-bootstrap-navwalker.php',           	/// WP Bootstrap Navwalker.
