@@ -66,19 +66,21 @@ body {
 				@extend .top-0;
 				@extend .start-0;
 				@extend .end-0;
-			}
-			#navbar-main {
-				@extend .bg-transparent;
-				box-shadow: none !important;
-			}
-			.nav-link {
-				@extend .link-light;				
-				&:hover {
-					@extend .link-secondary;
-				}			
-				&:focus {
-					@extend .link-light;
+
+				#navbar-main {
+					@extend .bg-transparent;
+					box-shadow: none !important;
 				}
+				.nav-link {
+					@extend .link-light;				
+					&:hover {
+						@extend .link-secondary;
+					}			
+					&:focus {
+						@extend .link-light;
+					}
+				}
+				
 			}
 		}
 		&.admin-bar {
