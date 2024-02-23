@@ -80,12 +80,14 @@ body {
 						@extend .link-light;
 					}
 				}
-				
+
 			}
 		}
+	}
+	@media (min-width: 768px) {
 		&.admin-bar {
 			#site-header {
-				&.bg-overlay {
+				&.sticky-top {
 					top: 32px !important;
 				}
 			}

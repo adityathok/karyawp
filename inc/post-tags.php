@@ -177,14 +177,14 @@ if ( ! function_exists( 'karyawp_entry_thumbnail' ) ) {
 		$ratio_def  = ['1x1', '4x3', '16x9', '21x9'];
 		$is_ratio   = in_array( $ratio, $ratio_def );
 
-		$image	= get_the_post_thumbnail( get_the_ID(), $size, array( 'class' => 'img-fluid w-100' ) );
+		$image	= get_the_post_thumbnail( get_the_ID(), $size, array( 'class' => 'img-fluid w-100 object-fit-cover' ) );
 
 		$html = '';
 		$html .= sprintf(
 			'<a href="%1$s" title="%2$s">%3$s</a>',
 			esc_url( get_the_permalink() ),
 			esc_html__( get_the_title() ),
-			( $is_ratio ) ? '<div class="ratio ratio-4x3 bg-light">'.$image.'</div>' : $image
+			( $is_ratio ) ? '<div class="ratio ratio-'.$ratio.' bg-light">'.$image.'</div>' : $image
 		);
 
 		return $html;

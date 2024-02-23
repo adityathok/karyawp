@@ -79,7 +79,7 @@ new \Kirki\Field\Radio_Buttonset(
 		'settings'    => 'karyawp_sidebar_position',
 		'label'       => esc_html__( 'Sidebar Position', 'karyawp' ),
 		'section'     => 'karyawp_layout_section',
-		'default'     => 'right',
+		'default'     => 'disable',
 		'placeholder' => esc_html__( 'Choose an option', 'karyawp' ),
 		'choices'     => [
 			'right'     => esc_html__( 'Right', 'karyawp' ),

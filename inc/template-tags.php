@@ -68,7 +68,7 @@ if ( ! function_exists( 'karyawp_sidebar_position' ) ) {
 	function karyawp_sidebar_position($layout = null) {
 
 		// Customizer
-		$sidebar_position = get_theme_mod( 'karyawp_sidebar_position', 'right' );
+		$sidebar_position = get_theme_mod( 'karyawp_sidebar_position', 'disable' );
 			
 		//is page
 		if(is_page()) {
@@ -121,7 +121,7 @@ if ( ! function_exists( 'karyawp_header_attributes' ) ) {
 			$atts['class'] = $atts['class'].' sticky-top';
 		}
 
-		$overlay = get_theme_mod( 'karyawp_header_overlay', true );
+		$overlay = get_theme_mod( 'karyawp_header_overlay', false );
 		if(is_page()){
 			$overlay = get_post_meta(get_the_ID(),'karyawp_header_overlay',true);
 		}
