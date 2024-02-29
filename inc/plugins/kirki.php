@@ -21,7 +21,7 @@ new \Kirki\Panel(
     ]
 );
 
-//ite Identity
+//site Identity
 new \Kirki\Section(
     'title_tagline',
     [
@@ -175,13 +175,23 @@ new \Kirki\Field\Multicolor(
     ]
 );
 
+//Header Panel
+new \Kirki\Panel(
+    'karyawp_header_panel',
+    [
+        'priority'    => 10,
+        'title'       => esc_html__( 'Header', 'karyawp' ),
+        'description' => esc_html__( 'Header settings', 'karyawp' ),
+    ]
+);
+
 //Header Section
 new \Kirki\Section(
     'karyawp_header_section',
     [
         'title'       => esc_html__('Header', 'karyawp'),
         'description' => esc_html__('Header settings.', 'karyawp'),
-        'panel'       => 'karyawp_general_panel',
+        'panel'       => 'karyawp_header_panel',
         'priority'    => 160,
     ]
 );
@@ -211,12 +221,22 @@ new \Kirki\Field\Radio_Buttonset(
 		],
 	]
 );
+//Header Logo Section
+new \Kirki\Section(
+    'karyawp_headerlogo_section',
+    [
+        'title'       => esc_html__('Logo', 'karyawp'),
+        'description' => esc_html__('Logo settings.', 'karyawp'),
+        'panel'       => 'karyawp_header_panel',
+        'priority'    => 160,
+    ]
+);
 new \Kirki\Field\Dimension(
 	[
 		'settings'    => 'karyawp_max_height_logo',
 		'label'       => esc_html__( 'Max Height Logo', 'karyawp' ),
 		'description' => esc_html__( 'Logo size', 'karyawp' ),
-		'section'     => 'karyawp_header_section',
+		'section'     => 'karyawp_headerlogo_section',
 		'default'     => '3rem',
 		'choices'     => [
 			'accept_unitless' => false,
