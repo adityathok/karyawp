@@ -11,7 +11,9 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-?>
+
+    do_action( 'karyawp_sidebar_left' );
+    ?>
 
     <main class="site-main" id="main">
 
@@ -20,11 +22,11 @@ get_header();
             <?php
             if ( have_posts() ) {
                 // Start the Loop.
-                $post_order = 1;
+                $i = 1;
                 while ( have_posts() ) {
                     the_post();
                     get_template_part( 'partials/content/content', get_post_format() );
-                    $post_order++;
+                    $i++;
                 }
             } else {
                 get_template_part( 'partials/content/none' );
@@ -40,5 +42,7 @@ get_header();
 
     </main><!-- #main -->
 
-<?php
+    <?php
+    do_action( 'karyawp_sidebar_right' );
+
 get_footer();
