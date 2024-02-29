@@ -16,8 +16,14 @@ jQuery(document).ready(function ($) {
     $(window).scroll(function() {
         if ($(window).scrollTop() > $('#site-header').height()) {
           $("body").addClass("is-scrolled");
+          $('#karyawp-scrolltotop').fadeIn(100);
         } else {
           $("body").removeClass("is-scrolled");
+          $('#karyawp-scrolltotop').fadeOut(100);
         }
+    });
+    $('#karyawp-scrolltotop').on('click', function () {
+      $('html, body').animate({scrollTop : 0}, 800);
+      return false;
     });
 });

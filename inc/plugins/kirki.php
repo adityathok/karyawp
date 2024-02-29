@@ -250,3 +250,37 @@ new \Kirki\Field\Dimension(
         ),
 	]
 );
+
+//Footer Panel
+new \Kirki\Panel(
+    'karyawp_footer_panel',
+    [
+        'priority'    => 10,
+        'title'       => esc_html__( 'Footer', 'karyawp' ),
+        'description' => esc_html__( 'Footer settings', 'karyawp' ),
+    ]
+);
+
+//Scroll To Top Section
+new \Kirki\Section(
+    'karyawp_scrolltotop_section',
+    [
+        'title'       => esc_html__('Scroll To Top', 'karyawp'),
+        'description' => esc_html__('Navigation Scroll To Top settings.', 'karyawp'),
+        'panel'       => 'karyawp_footer_panel',
+        'priority'    => 160,
+    ]
+);
+new \Kirki\Field\Radio_Buttonset(
+	[
+		'settings'    => 'karyawp_footer_scrolltotop',
+		'label'       => esc_html__( 'Scroll To Top', 'karyawp' ),
+		'section'     => 'karyawp_scrolltotop_section',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => [
+			0   => esc_html__( 'Disable', 'karyawp' ),
+			1   => esc_html__( 'Enable', 'karyawp' ),
+		],
+	]
+);
