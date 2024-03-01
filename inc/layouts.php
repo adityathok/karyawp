@@ -120,7 +120,7 @@ if (!function_exists('karyawp_footer_scrolltotop')) {
         }
 
         echo '<div class="karyawp-scrolltotop position-fixed bottom-0 end-0">';
-            echo '<button type="button" class="btn btn-sm btn-dark m-2 m-md-3 opacity-50" title="Scroll To Top" id="karyawp-scrolltotop" style="display: none;">';
+            echo '<button type="button" class="btn btn-sm btn-secondary m-2 m-md-3 opacity-50" title="Scroll To Top" id="karyawp-scrolltotop" style="display: none;">';
                 echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-up" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M7.776 5.553a.5.5 0 0 1 .448 0l6 3a.5.5 0 1 1-.448.894L8 6.56 2.224 9.447a.5.5 0 1 1-.448-.894z"/> </svg>';
             echo '</button>';
         echo '</div><!-- #karyawp-scrolltotop-->';
