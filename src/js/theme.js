@@ -14,12 +14,12 @@ jQuery(document).ready(function ($) {
         }
     });
     $(window).scroll(function() {
-        if ($(window).scrollTop() > $('#site-header').height()) {
+        if ($(window).scrollTop() > $('#page > header').height()) {
           $("body").addClass("is-scrolled");
-          $('#karyawp-scrolltotop').fadeIn(100);
+          $('#karyawp-scrolltotop').fadeIn();
         } else {
           $("body").removeClass("is-scrolled");
-          $('#karyawp-scrolltotop').fadeOut(100);
+          $('#karyawp-scrolltotop').fadeOut();
         }
     });
     $('#karyawp-scrolltotop').on('click', function () {
