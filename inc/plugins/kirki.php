@@ -151,9 +151,9 @@ new \Kirki\Field\Multicolor(
         ],
         'alpha'     => true,
         'default'   => [
-            'color'  => '#184cdb',
-            'hover'  => '#212121',
-            'active' => '#184cdb',
+            'color'  => '#212121',
+            'hover'  => '#184cdb',
+            'active' => '#212121',
         ],
         'output'    => [
             [
