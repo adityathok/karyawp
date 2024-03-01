@@ -27,6 +27,7 @@ $karyawp_includes = array(
 	'/meta-box.php',         						/// Custom Meta box for themes
 	'/widgets.php',	 								/// Declaring widgets
 	'/custom-comments.php',							/// Layouting Comments Form
+	'/breadcrumbs.php',								/// A breadcrumb menu script
 	'/layouts.php',	 								/// Layouting hooks
 	'/plugins/kirki.php',							/// Kirki Customizer
 );

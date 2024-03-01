@@ -15,6 +15,15 @@ get_header();
 
     <main class="site-main" id="main">
 
+        <?php echo karyawp_breadcrumb(); ?>
+
+        <header class="page-header mb-5">
+            <?php
+            the_archive_title( '<h1 class="page-title">', '</h1>' );
+            the_archive_description( '<div class="taxonomy-description">', '</div>' );
+            ?>
+        </header>
+        
         <div class="row row-archive">
 
             <?php

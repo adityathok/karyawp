@@ -2,7 +2,8 @@
 .widget {
     @extend .mb-5;
     .widget-title {
-        @extend .fs-5;        
+        @extend .fs-4;
+        @extend .mb-3;
     }
 }
 

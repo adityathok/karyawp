@@ -14,6 +14,8 @@ get_header();
 
     <main class="site-main" id="main">
 
+        <?php echo karyawp_breadcrumb(); ?>
+
         <?php
         while ( have_posts() ) {
             the_post();
