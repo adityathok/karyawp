@@ -1,9 +1,8 @@
 // widget wordpress
 .widget {
-    @extend .mb-4;
-    ul {
-        @extend .ps-4;
-        @extend .m-0;
+    @extend .mb-5;
+    .widget-title {
+        @extend .fs-5;        
     }
 }
 

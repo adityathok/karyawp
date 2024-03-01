@@ -48,7 +48,7 @@ new \Kirki\Field\Dimension(
         'label'       => esc_html__('Max width container', 'karyawp'),
         'description' => esc_html__('Max width container default (px)', 'karyawp'),
         'section'     => 'karyawp_layout_section',
-        'default'     => '1140px',
+        'default'     => '1240px',
         'choices'     => [
             'accept_unitless' => true,
         ],
@@ -261,6 +261,32 @@ new \Kirki\Panel(
     ]
 );
 
+//Widget Footer Section
+new \Kirki\Section(
+    'karyawp_footerwidget_section',
+    [
+        'title'       => esc_html__('Widgets', 'karyawp'),
+        'description' => esc_html__('Widgets Footer settings.', 'karyawp'),
+        'panel'       => 'karyawp_footer_panel',
+        'priority'    => 160,
+    ]
+);
+new \Kirki\Field\Radio_Buttonset(
+	[
+		'settings'    => 'karyawp_footer_widgets',
+		'label'       => esc_html__( 'Number of Widgets', 'karyawp' ),
+		'section'     => 'karyawp_footerwidget_section',
+		'default'     => '3',
+		'priority'    => 10,
+		'choices'     => [
+			0   => esc_html__( '0', 'karyawp' ),
+			1   => esc_html__( '1', 'karyawp' ),
+			2   => esc_html__( '2', 'karyawp' ),
+			3   => esc_html__( '3', 'karyawp' ),
+			4   => esc_html__( '4', 'karyawp' ),
+		],
+	]
+);
 //Scroll To Top Section
 new \Kirki\Section(
     'karyawp_scrolltotop_section',
