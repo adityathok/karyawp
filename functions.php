@@ -30,6 +30,7 @@ $karyawp_includes = array(
 	'/breadcrumbs.php',								/// A breadcrumb menu script
 	'/layouts.php',	 								/// Layouting hooks
 	'/plugins/kirki.php',							/// Kirki Customizer
+	'/plugins/beaver-builder.php',					/// Beaver Builder Support
 );
 
 // Include files.

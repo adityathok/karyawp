@@ -31,11 +31,13 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 
 		<?php 
+		do_action( 'karyawp_header_before' );
 		/** 
 		* karyawp_header()
 		* partials/header
 		*/
 		do_action( 'karyawp_header' );
+		do_action( 'karyawp_header_after' );
 		?>
 
 		<div class="site-content" id="content">

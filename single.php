@@ -9,6 +9,8 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
+
+do_action('karyawp_sidebar_left');
 ?>
 
     <main class="site-main" id="main">
@@ -30,4 +32,6 @@ get_header();
     </main><!-- #main -->
 
 <?php
+do_action('karyawp_sidebar_right');
+
 get_footer();
