@@ -9,10 +9,12 @@
  */
 
 get_header();
+do_action('karyawp_container_before');
 
 while ( have_posts() ) :
     the_post();
     the_content();
 endwhile;
 
+do_action('karyawp_container_after');
 get_footer();

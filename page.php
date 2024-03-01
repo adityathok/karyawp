@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-do_action('karyawp_sidebar_left');
+do_action('karyawp_container_before');
 ?>
 
     <main class="site-main" id="main">
@@ -33,6 +33,6 @@ do_action('karyawp_sidebar_left');
     </main><!-- #main -->
 
 <?php
-do_action('karyawp_sidebar_right');
+do_action('karyawp_container_after');
 
 get_footer();

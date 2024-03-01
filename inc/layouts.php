@@ -25,7 +25,7 @@ if (!function_exists('karyawp_footer')) {
 
 /// Sidebar Left
 if (!function_exists('karyawp_sidebar_left')) {
-    add_action('karyawp_sidebar_left', 'karyawp_sidebar_left', 21);
+    add_action('karyawp_container_before', 'karyawp_sidebar_left', 21);
     function karyawp_sidebar_left()
     {
 		$sidebar_position = karyawp_sidebar_position();
@@ -40,7 +40,7 @@ if (!function_exists('karyawp_sidebar_left')) {
 }
 /// Sidebar right
 if (!function_exists('karyawp_sidebar_right')) {
-    add_action('karyawp_sidebar_right', 'karyawp_sidebar_right', 19);
+    add_action('karyawp_container_after', 'karyawp_sidebar_right', 19);
     function karyawp_sidebar_right()
     {
 		$sidebar_position = karyawp_sidebar_position();
@@ -61,7 +61,7 @@ if (!function_exists('karyawp_sidebar_right')) {
 
 ///Open content container
 if (!function_exists('karyawp_open_content')) {
-    add_action('karyawp_sidebar_left', 'karyawp_open_content', 19);
+    add_action('karyawp_container_before', 'karyawp_open_content', 19);
     function karyawp_open_content()
     {
         if (
@@ -91,7 +91,7 @@ if (!function_exists('karyawp_open_content')) {
 }
 ///close content container
 if (!function_exists('karyawp_close_content')) {
-    add_action('karyawp_sidebar_right', 'karyawp_close_content', 21);
+    add_action('karyawp_container_after', 'karyawp_close_content', 21);
     function karyawp_close_content()
     {
         if (
