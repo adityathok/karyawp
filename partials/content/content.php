@@ -23,7 +23,7 @@ global $i;
                 <?php if ( has_post_thumbnail() ): ?>
                     <div class="col-md-6 col-xl-7 pb-3 pb-md-0">
                         <?php
-                            echo karyawp_entry_thumbnail(['size' => 'large', 'ratio' => '4x3']);
+                            echo karyawp_entry_thumbnail(['size' => 'large', 'ratio' => '16x9']);
                         ?>
                     </div>
                 <?php endif; ?>
@@ -62,7 +62,7 @@ global $i;
                 <?php if ( has_post_thumbnail() ): ?>
                     <div class="col-md-4 col-xl-3 pb-3 pb-md-0">
                         <?php
-                            echo karyawp_entry_thumbnail(['size' => 'medium', 'ratio' => '14x3']);
+                            echo karyawp_entry_thumbnail(['size' => 'medium', 'ratio' => '4x3']);
                         ?>
                     </div> 
                 <?php endif; ?>

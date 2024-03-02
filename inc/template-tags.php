@@ -68,7 +68,7 @@ if ( ! function_exists( 'karyawp_sidebar_position' ) ) {
 	function karyawp_sidebar_position($layout = null) {
 
 		// Customizer
-		$sidebar_position = get_theme_mod( 'karyawp_sidebar_position', 'disable' );
+		$sidebar_position = get_theme_mod( 'karyawp_sidebar_position', 'right' );
 			
 		//is page
 		if(is_page()) {
