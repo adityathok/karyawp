@@ -48,7 +48,7 @@ new \Kirki\Field\Dimension(
         'label'       => esc_html__('Max width container', 'karyawp'),
         'description' => esc_html__('Max width container default (px)', 'karyawp'),
         'section'     => 'karyawp_layout_section',
-        'default'     => '1240px',
+        'default'     => '1220px',
         'choices'     => [
             'accept_unitless' => true,
         ],
