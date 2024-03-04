@@ -16,6 +16,9 @@ $karyawp_inc_dir = 'inc';
 
 // Array of files to include.
 $karyawp_includes = array(
+	'/plugins/tgm-plugin-activation.php',			/// TGM-Plugin-Activation
+	'/plugins/kirki.php',							/// Kirki Customizer
+	'/plugins/beaver-builder.php',					/// Beaver Builder Support
 	'/template-tags.php',							/// Custom template tags for this theme
 	'/post-tags.php',								/// Custom post tags for this theme
 	'/extras.php',                          		/// Custom functions that act independently of the theme templates.
@@ -29,8 +32,6 @@ $karyawp_includes = array(
 	'/custom-comments.php',							/// Layouting Comments Form
 	'/breadcrumbs.php',								/// A breadcrumb menu script
 	'/layouts.php',	 								/// Layouting hooks
-	'/plugins/kirki.php',							/// Kirki Customizer
-	'/plugins/beaver-builder.php',					/// Beaver Builder Support
 );
 
 // Include files.

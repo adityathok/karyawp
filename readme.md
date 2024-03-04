@@ -24,3 +24,4 @@ This project is licensed under the GNU GPLv3 or later license.
 - WP Bootstrap Navwalker by Edward McIntyre & William Patton: https://github.com/wp-bootstrap/wp-bootstrap-navwalker (GNU GPLv3)
 - This theme uses the [Kirki plugin](https://github.com/themeum/kirki) for enhancing the WordPress Customizer experience.
 - Breadcrumb Trail by Justin Tadlock : https://github.com/justintadlock/breadcrumb-trail.
+- TGM-Plugin-Activation by Thomas Griffin, Gary Jones, Juliette Reinders Folmer : https://github.com/TGMPA/TGM-Plugin-Activation
