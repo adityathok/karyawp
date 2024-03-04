@@ -47,8 +47,12 @@ del(['dist','assets/karyawp.cjs']).then( async() => {
     console.log('delete folder dist');
     copyDir("./", "./dist/karyawp").then(() => {  
         console.log('copy folder dist'); 
-        zipdir("./dist/karyawp", { saveTo: "./dist/karyawp.zip" });
-        console.log('create karyawp.zip');
+        
+        const packageJson = require("../../package.json");
+        const version = packageJson.version;
+
+        zipdir("./dist/karyawp", { saveTo: `./dist/karyawp.${version}.zip` });
+        console.log(`create karyawp.${version}.zip`);
     });
 });
 
