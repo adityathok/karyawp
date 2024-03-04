@@ -11,6 +11,9 @@ defined( 'ABSPATH' ) || exit;
 // define Version
 define( 'KARYAWP_VERSION', '0.0.1' );
 
+//define if woocommerce is active
+define( 'KARYAWP_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
+
 // includes directory.
 $karyawp_inc_dir = 'inc';
 
@@ -32,6 +35,7 @@ $karyawp_includes = array(
 	'/custom-comments.php',							/// Layouting Comments Form
 	'/breadcrumbs.php',								/// A breadcrumb menu script
 	'/layouts.php',	 								/// Layouting hooks
+	'/woocommerce.php',	 						    /// WooCommerce Support
 );
 
 // Include files.
