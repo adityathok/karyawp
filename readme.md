@@ -13,6 +13,11 @@ Theme WordPress Starter Menggunakan Bootstrap 5.
 - Contact Form 7 support
 - Child Theme ready
 
+## Usage
+- Download File .zip dari [Release](https://github.com/adityathok/karyawp/releases) yang tersedia, Upload ke Appearance > Themes.
+- Install Plugin yang diperlukan untuk Theme ke Plugins > Install Plugins.
+- Untuk Modifikasi Theme gunakan Child Theme, lihat [KaryaWP Child Theme](https://github.com/adityathok/karyawp-child-theme) 
+
 ## Contributing
 Contributions are welcome! If you find a bug or want to improve KaryaWP, please open an issue or submit a pull request. Make sure to follow the existing coding style and conventions.
 
