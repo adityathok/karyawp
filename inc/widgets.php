@@ -39,13 +39,15 @@ if (!function_exists('karyawp_footerwidgets_init')) {
 		if($widgets == 0)
 			return false;
 
-		for ($x = 1; $x <= $widgets; $x++) {
-			//Footer-Sidebar $i
+		for ($i = 1; $i <= 4; $i++) {
+
+			$widget_number = sprintf(__('Footer Sidebar %d', 'karyawp'), $i);
+
 			register_sidebar(
 				array(
-					'name'          => __('Footer Sidebar '.$x, 'karyawp'),
-					'id'            => 'footer-sidebar-'.$x,
-					'description'   => __('sidebar widget area '.$x, 'karyawp'),
+					'name'          => $widget_number,
+					'id'            => 'footer-sidebar-' . $i,
+					'description'   => sprintf(__('Widget untuk footer %d', 'karyawp'), $i),
 					'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 					'after_widget'  => '</aside>',
 					'before_title'  => '<h3 class="widget-title">',

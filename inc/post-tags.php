@@ -199,25 +199,24 @@ if ( ! function_exists( 'karyawp_post_tags' ) ) {
 	function karyawp_post_tags() {
 
 		$tags = [];
-
-        $tag_class = apply_filters(
+	
+		$tag_class = apply_filters(
 			'karyawp_post_tags_class',
 			sprintf(
 				'btn btn-sm rounded-pill btn-light px-3 me-1 mb-1',
 			)
 		);
-
-        $posttags = get_the_tags();
-        if ($posttags) {
-
-            foreach($posttags as $tag) {
-                $tags[] = '<a class="'.$tag_class.'" href="' . esc_attr( get_tag_link( $tag->term_id ) ) . '">' . __( $tag->name ) . '</a>'; 
-            }
-
-            return '<span class="karyawp_post_tags">'.implode('',$tags).'</span>';
-        } else {
-            return false;
-        }
-		
+	
+		$posttags = get_the_tags();
+		if ($posttags) {
+	
+			foreach ($posttags as $tag) {
+				$tags[] = '<a class="' . esc_attr($tag_class) . '" href="' . esc_attr(get_tag_link($tag->term_id)) . '">' . esc_html($tag->name) . '</a>';
+			}
+	
+			return '<span class="karyawp_post_tags">' . implode('', $tags) . '</span>';
+		} else {
+			return false;
+		}
 	}
 }

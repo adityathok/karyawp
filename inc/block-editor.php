@@ -44,3 +44,18 @@
      }
  }
  
+ if ( function_exists( 'register_block_style' ) ) {
+    
+	$color_bs_button = array('primary', 'secondary', 'success','danger', 'warning', 'info', 'light', 'dark');
+    foreach ($color_bs_button as $color) {
+        register_block_style(
+            'core/button',
+            array(
+                'name'         => sprintf(__('bs-button-%s', 'karyawp'), $color),
+                'label'        => sprintf(__('BS %s', 'karyawp'), $color),
+                'is_default'   => true,
+            )
+        );
+    }
+    
+}

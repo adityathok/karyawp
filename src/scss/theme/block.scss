@@ -34,3 +34,18 @@ body.no-sidebar {
 		}
 	}
 }
+
+.wp-block-button {
+		
+	$color_bs_button : 'primary', 'secondary', 'success','danger', 'warning', 'info', 'light', 'dark';
+
+	@each $color_bs_button in $color_bs_button  {
+		&.is-style-bs-button-#{$color_bs_button } {
+			.wp-block-button__link {			
+				@extend .btn;
+				@extend .btn-#{$color_bs_button };
+			}
+		}
+	}
+}
+

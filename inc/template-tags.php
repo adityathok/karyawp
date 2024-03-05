@@ -53,11 +53,11 @@ if ( ! function_exists( 'karyawp_container_type' ) ) {
 	 * Prints HTML class for type container.
 	 */
 	function karyawp_container_type($layout = null) {
-		$container = get_theme_mod( 'karyawp_container_type', 'container' );
-
-		$container = apply_filters( 'karyawp_container_type', $container );
-
-		return esc_html__( $container );
+		$container = get_theme_mod('karyawp_container_type', 'container');
+	
+		$container = apply_filters('karyawp_container_type', $container);
+	
+		return $container;
 	}
 }
 
