@@ -140,3 +140,25 @@ if ( ! function_exists( 'karyawp_header_attributes' ) ) {
 		echo trim( $attributes ); // phpcs:ignore WordPress.Security.EscapeOutput
 	}
 }
+
+
+if ( ! function_exists( 'karyawp_load_font_google' ) ) {
+	/**
+	 * Load Google font for the theme.
+	 *
+	 * @return void
+	 */
+	add_action('wp_head','karyawp_load_font_google');
+	function karyawp_load_font_google() {
+		$fonts 		= get_theme_mod( 'karyawp_typography_global' );
+		$fontfamily = ($fonts && isset($fonts['font-family']) && $fonts['font-family'])? $fonts['font-family']: 'Lato';
+		if($fontfamily){
+			$fontfamily = str_replace(' ','+',$fontfamily);
+			?>
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=<?php echo $fontfamily; ?>:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+			<?php
+		}
+	}
+}
