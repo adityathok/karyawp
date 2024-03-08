@@ -177,7 +177,7 @@ if ( ! function_exists( 'karyawp_entry_thumbnail' ) ) {
 		$ratio_def  = ['1x1', '4x3', '16x9', '21x9'];
 		$is_ratio   = in_array( $ratio, $ratio_def );
 
-		$image	= get_the_post_thumbnail( get_the_ID(), $size, array( 'class' => 'img-fluid w-100 object-fit-cover' ) );
+		$image	= get_the_post_thumbnail( get_the_ID(), $size, array( 'class' => 'img-fluid w-100 object-fit-cover lazyload' ) );
 
 		$html = '';
 		$html .= sprintf(
@@ -219,4 +219,24 @@ if ( ! function_exists( 'karyawp_post_tags' ) ) {
 			return false;
 		}
 	}
+}
+
+
+if ( ! function_exists( 'karyawp_lazysizes_post_thumbnail' ) ) {
+	function karyawp_lazysizes_post_thumbnail($attr, $attachment, $size) {
+		// check if has atribut class 'lazyload'
+		if (strpos($attr['class'], 'lazyload') !== false) {
+			if(isset($attr['src'])){
+				$attr['data-src'] = $attr['src'];
+				unset($attr['src']);
+			}
+			if(isset($attr['srcset'])){
+				$attr['data-srcset'] = $attr['srcset'];
+				unset($attr['srcset']);
+			}
+		}
+	
+		return $attr;
+	}
+	add_filter('wp_get_attachment_image_attributes', 'karyawp_lazysizes_post_thumbnail', 10, 3);
 }

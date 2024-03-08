@@ -10,12 +10,12 @@ module.exports = {
   mode: 'production',
   entry: './src/js/main.js',
   output: {
-    filename: 'theme.js',
+    filename: 'js/theme.js',
     path: path.resolve(__dirname, 'assets')
   },
   plugins: [    
     new miniCssExtractPlugin({
-        filename: 'theme.css'
+        filename: 'css/theme.css'
     })
   ],
   module: {
