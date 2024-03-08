@@ -16,7 +16,7 @@ get_header();
 
         <div class="text-center mx-auto" style="max-width: 40em;">
 
-            <h1 class="fw-bold">
+            <h1 class="fw-bold mt-5">
                 404
             </h1>
 
