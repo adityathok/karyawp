@@ -56,8 +56,8 @@ if ( ! function_exists( 'karyawp_container_type' ) ) {
 		$container = get_theme_mod('karyawp_container_type', 'container');
 	
 		$container = apply_filters('karyawp_container_type', $container);
-	
-		return $container;
+	 
+		return $container.' px-4';
 	}
 }
 
