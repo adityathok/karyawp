@@ -11,23 +11,22 @@ defined('ABSPATH') || exit;
 if (!class_exists('Kirki') || class_exists('Kirki') && KIRKI_VERSION < 4)
     return false;
 
-//General
+//Panel
 new \Kirki\Panel(
-    'karyawp_general_panel',
+    'karyawp_options_panel',
     [
         'priority'    => 10,
-        'title'       => esc_html__( 'General', 'karyawp' ),
-        'description' => esc_html__( 'General settings', 'karyawp' ),
+        'title'       => esc_html__( 'KaryaWP Options Panel', 'karyawp' ),
+        'description' => esc_html__( 'Customize your KaryaWP theme', 'karyawp' ),
     ]
 );
-
 //site Identity
 new \Kirki\Section(
     'title_tagline',
     [
-        'title'       => esc_html__('Site Identity', 'karyawp'),
+        'title'       => esc_html__('Logo, Title & Favicon', 'karyawp'),
         'description' => esc_html__('Site Identity settings.', 'karyawp'),
-        'panel'       => 'karyawp_general_panel',
+        'panel'       => 'karyawp_options_panel',
         'priority'    => 160,
     ]
 );
@@ -37,8 +36,8 @@ new \Kirki\Section(
     'karyawp_layout_section',
     [
         'title'       => esc_html__('Layout', 'karyawp'),
-        'description' => esc_html__('Layout settings.', 'karyawp'),
-        'panel'       => 'karyawp_general_panel',
+        'description' => esc_html__('Layout and Container settings.', 'karyawp'),
+        'panel'       => 'karyawp_options_panel',
         'priority'    => 160,
     ]
 );
@@ -94,15 +93,15 @@ new \Kirki\Section(
     'karyawp_typography_section',
     [
         'title'       => esc_html__('Typography', 'karyawp'),
-        'description' => esc_html__('Typography global settings.', 'karyawp'),
-        'panel'       => 'karyawp_general_panel',
+        'description' => esc_html__('Typography general settings.', 'karyawp'),
+        'panel'       => 'karyawp_options_panel',
         'priority'    => 160,
     ]
 );
 new \Kirki\Field\Typography(
     [
-        'settings'    => 'karyawp_typography_global',
-        'label'       => esc_html__('Typography', 'karyawp'),
+        'settings'    => 'karyawp_typography_general',
+        'label'       => esc_html__('General Typography', 'karyawp'),
         'description' => esc_html__('Select typography options', 'karyawp'),
         'section'     => 'karyawp_typography_section',
         'priority'    => 10,
@@ -122,12 +121,50 @@ new \Kirki\Field\Typography(
         ],
     ]
 );
+
+//Colors Section
+new \Kirki\Section(
+    'karyawp_colors_section',
+    [
+        'title'       => esc_html__('Colors', 'karyawp'),
+        'description' => esc_html__('Colors general settings.', 'karyawp'),
+        'panel'       => 'karyawp_options_panel',
+        'priority'    => 160,
+    ]
+);
+
+new \Kirki\Field\Color(
+	[
+		'settings'    => 'karyawp_primary_color',
+		'label'       => __( 'Primary Color', 'karyawp' ),
+		'description' => esc_html__( '', 'karyawp' ),
+		'section'     => 'karyawp_colors_section',
+		'default'     => '#184cdb',
+        'output'      => [
+            [
+                'choice'    => 'color',
+                'element'   => ':root',
+                'property'  => '--bs-primary',
+            ],
+            [
+                'choice'    => 'color',
+                'element'   => '[data-bs-theme=light]',
+                'property'  => '--bs-primary',
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => ':root',
+                'property'  => '--karyawp-primary',
+            ]
+        ],
+	]
+);
 new \Kirki\Field\Color(
 	[
 		'settings'    => 'karyawp_font_color',
 		'label'       => __( 'Font Color', 'karyawp' ),
 		'description' => esc_html__( '', 'karyawp' ),
-		'section'     => 'karyawp_typography_section',
+		'section'     => 'karyawp_colors_section',
 		'default'     => '#212121',
         'output'      => [
             [
@@ -142,7 +179,7 @@ new \Kirki\Field\Multicolor(
     [
         'settings'  => 'karyawp_link_color',
         'label'     => esc_html__('Link Color', 'karyawp'),
-        'section'   => 'karyawp_typography_section',
+        'section'   => 'karyawp_colors_section',
         'priority'  => 10,
         'choices'   => [
             'color'    => esc_html__('Color', 'karyawp'),
@@ -174,15 +211,27 @@ new \Kirki\Field\Multicolor(
         ],
     ]
 );
-
-//Header Panel
-new \Kirki\Panel(
-    'karyawp_header_panel',
-    [
-        'priority'    => 10,
-        'title'       => esc_html__( 'Header', 'karyawp' ),
-        'description' => esc_html__( 'Header settings', 'karyawp' ),
-    ]
+new \Kirki\Field\Background(
+	[
+		'settings'    => 'karyawp_background_general',
+		'label'       => esc_html__( 'Background', 'kirki' ),
+		'description' => esc_html__( 'General background for website', 'kirki' ),
+		'section'     => 'karyawp_colors_section',
+		'default'     => [
+			'background-color'      => 'rgba(255,255,255)',
+			'background-image'      => '',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'cover',
+			'background-attachment' => 'scroll',
+		],
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => 'body[data-bs-theme=light]',
+			],
+		],
+	]
 );
 
 //Header Section
@@ -191,7 +240,7 @@ new \Kirki\Section(
     [
         'title'       => esc_html__('Header', 'karyawp'),
         'description' => esc_html__('Header settings.', 'karyawp'),
-        'panel'       => 'karyawp_header_panel',
+        'panel'       => 'karyawp_options_panel',
         'priority'    => 160,
     ]
 );
@@ -221,22 +270,12 @@ new \Kirki\Field\Radio_Buttonset(
 		],
 	]
 );
-//Header Logo Section
-new \Kirki\Section(
-    'karyawp_headerlogo_section',
-    [
-        'title'       => esc_html__('Logo', 'karyawp'),
-        'description' => esc_html__('Logo settings.', 'karyawp'),
-        'panel'       => 'karyawp_header_panel',
-        'priority'    => 160,
-    ]
-);
 new \Kirki\Field\Dimension(
 	[
 		'settings'    => 'karyawp_max_height_logo',
 		'label'       => esc_html__( 'Max Height Logo', 'karyawp' ),
 		'description' => esc_html__( 'Logo size', 'karyawp' ),
-		'section'     => 'karyawp_headerlogo_section',
+		'section'     => 'karyawp_header_section',
 		'default'     => '3rem',
 		'choices'     => [
 			'accept_unitless' => false,
@@ -251,31 +290,21 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-//Footer Panel
-new \Kirki\Panel(
-    'karyawp_footer_panel',
-    [
-        'priority'    => 10,
-        'title'       => esc_html__( 'Footer', 'karyawp' ),
-        'description' => esc_html__( 'Footer settings', 'karyawp' ),
-    ]
-);
-
-//Widget Footer Section
+// Footer Section
 new \Kirki\Section(
-    'karyawp_footerwidget_section',
+    'karyawp_footer_section',
     [
-        'title'       => esc_html__('Widgets', 'karyawp'),
-        'description' => esc_html__('Widgets Footer settings.', 'karyawp'),
-        'panel'       => 'karyawp_footer_panel',
+        'title'       => esc_html__('Footer', 'karyawp'),
+        'description' => esc_html__('Footer settings.', 'karyawp'),
+        'panel'       => 'karyawp_options_panel',
         'priority'    => 160,
     ]
 );
 new \Kirki\Field\Radio_Buttonset(
 	[
 		'settings'    => 'karyawp_footer_widgets',
-		'label'       => esc_html__( 'Number of Widgets', 'karyawp' ),
-		'section'     => 'karyawp_footerwidget_section',
+		'label'       => esc_html__( 'Number of footer Widgets', 'karyawp' ),
+		'section'     => 'karyawp_footer_section',
 		'default'     => '3',
 		'priority'    => 10,
 		'choices'     => [
@@ -287,21 +316,11 @@ new \Kirki\Field\Radio_Buttonset(
 		],
 	]
 );
-//Scroll To Top Section
-new \Kirki\Section(
-    'karyawp_scrolltotop_section',
-    [
-        'title'       => esc_html__('Scroll To Top', 'karyawp'),
-        'description' => esc_html__('Navigation Scroll To Top settings.', 'karyawp'),
-        'panel'       => 'karyawp_footer_panel',
-        'priority'    => 160,
-    ]
-);
 new \Kirki\Field\Radio_Buttonset(
 	[
 		'settings'    => 'karyawp_footer_scrolltotop',
 		'label'       => esc_html__( 'Scroll To Top', 'karyawp' ),
-		'section'     => 'karyawp_scrolltotop_section',
+		'section'     => 'karyawp_footer_section',
 		'default'     => '1',
 		'priority'    => 10,
 		'choices'     => [

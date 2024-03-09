@@ -141,23 +141,31 @@ if ( ! function_exists( 'karyawp_header_attributes' ) ) {
 	}
 }
 
-
-if ( ! function_exists( 'karyawp_load_font_google' ) ) {
+if ( ! function_exists( 'karyawp_inline_customizer_style' ) ) {
 	/**
-	 * Load Google font for the theme.
+	 * Load inline style from customizer for the theme.
 	 *
 	 * @return void
 	 */
-	add_action('wp_head','karyawp_load_font_google');
-	function karyawp_load_font_google() {
+	add_action('wp_head','karyawp_inline_customizer_style');
+	function karyawp_inline_customizer_style() {
 		$fonts 		= get_theme_mod( 'karyawp_typography_global' );
 		$fontfamily = ($fonts && isset($fonts['font-family']) && $fonts['font-family'])? $fonts['font-family']: 'Lato';
+		
 		if($fontfamily){
 			$fontfamily = str_replace(' ','+',$fontfamily);
 			?>
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=<?php echo $fontfamily; ?>:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+			<?php
+		}
+
+		$background_general	= get_theme_mod( 'karyawp_background_general' );
+		$background_color	= isset($background_general['background-color']) ? $background_general['background-color'] : 'rgba(255,255,255)';
+		if($background_color){
+			?>
+			<style id="karyawp-inline-styles">[data-bs-theme=light] .bg-body {background-color: <?php echo $background_color; ?> !important;}</style>
 			<?php
 		}
 	}
