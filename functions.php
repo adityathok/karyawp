@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // define Version
-define( 'KARYAWP_VERSION', '0.0.1' );
+define( 'KARYAWP_VERSION', '0.1.0' );
 
 //define if woocommerce is active
 define( 'KARYAWP_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
