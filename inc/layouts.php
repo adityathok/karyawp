@@ -98,6 +98,7 @@ if (!function_exists('karyawp_close_content')) {
 			is_page_template(
 				array(
 					'page-templates/canvas.php',
+					'page-templates/empty.php',
 				)
 			)
 		) {

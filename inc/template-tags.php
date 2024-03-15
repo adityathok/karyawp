@@ -78,6 +78,7 @@ if ( ! function_exists( 'karyawp_sidebar_position' ) ) {
 					array(
 						'page-templates/empty.php',
 						'page-templates/canvas.php',
+						'page-templates/full.php',
 					)
 				)
 			) {

@@ -41,13 +41,6 @@ class KaryaWP_Metabox_Page {
                 $_POST['karyawp_header_overlay']
             );
         }
-        if (array_key_exists('karyawp_page_title', $_POST)) {
-            update_post_meta(
-                $post_id,
-                'karyawp_page_title',
-                $_POST['karyawp_page_title']
-            );
-        }
         if (array_key_exists('karyawp_sidebar_position', $_POST)) {
             update_post_meta(
                 $post_id,
