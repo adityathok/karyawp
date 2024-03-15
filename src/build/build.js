@@ -22,6 +22,7 @@ async function copyDir(src, dest) {
     ".jshintignore",
     ".travis.yml",
     "vite.config.js",
+    "webpack.config.js",
     "composer.json",
     "composer.lock",
     "package.json",
@@ -51,7 +52,7 @@ del(['dist','assets/karyawp.cjs']).then( async() => {
         const packageJson = require("../../package.json");
         const version = packageJson.version;
 
-        zipdir("./dist/karyawp", { saveTo: `./dist/karyawp.${version}.zip` });
+        zipdir("./dist", { saveTo: `./dist/karyawp.${version}.zip` });
         console.log(`create karyawp.${version}.zip`);
     });
 });
