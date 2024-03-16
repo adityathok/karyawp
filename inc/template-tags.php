@@ -165,9 +165,14 @@ if ( ! function_exists( 'karyawp_inline_customizer_style' ) ) {
 
 		$background_general	= get_theme_mod( 'karyawp_background_general' );
 		$background_color	= isset($background_general['background-color']) ? $background_general['background-color'] : 'rgba(255,255,255)';
-		if($background_color){
+		
+		$container_width	= get_theme_mod( 'karyawp_container_width' );
+		if($background_color || $container_width) {
 			?>
-			<style id="karyawp-inline-styles">[data-bs-theme=light] .bg-body {background-color: <?php echo $background_color; ?> !important;}</style>
+			<style id="karyawp-inline-styles">
+				[data-bs-theme=light] .bg-body {background-color: <?php echo $background_color; ?> !important;}
+				body.no-sidebar .alignfull .wp-block-cover__inner-container,body.no-sidebar .wp-block-columns.alignfull .wp-block-columns {max-width: <?php echo $container_width; ?> !important; padding: 0 2.5rem;}
+			</style>
 			<?php
 		}
 	}
