@@ -3,7 +3,7 @@
  * Template Name: Empty karyaWP
  *
  * Template for displaying a page just with the header and footer area and a "naked" content area in between.
- * Good for landingpages and other types of pages where you want to add a lot of custom markup.
+ * Good for landing pages and other types of pages where you want to use a page builder.
  *
  * @package karyawp
  */

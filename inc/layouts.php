@@ -64,46 +64,15 @@ if (!function_exists('karyawp_open_content')) {
     add_action('karyawp_container_before', 'karyawp_open_content', 19);
     function karyawp_open_content()
     {
-        if (
-			is_page_template(
-				array(
-					'page-templates/canvas.php',
-					'page-templates/empty.php',
-				)
-			)
-		) {
-			return;
-		}
-
-        if (
-			is_page_template(
-				array(
-					'page-templates/full.php',
-				)
-			)
-		) {
-            echo '<div class="'.karyawp_container_type().' container-content">';
-		} else {
-            echo '<div class="'.karyawp_container_type().' container-content py-5">';
-        }
-
+        echo '<div class="'.karyawp_container_type().' container-content py-5">';
     }
 }
+
 ///close content container
 if (!function_exists('karyawp_close_content')) {
     add_action('karyawp_container_after', 'karyawp_close_content', 21);
     function karyawp_close_content()
     {
-        if (
-			is_page_template(
-				array(
-					'page-templates/canvas.php',
-					'page-templates/empty.php',
-				)
-			)
-		) {
-			return;
-		}
         echo '</div>';
     }
 }

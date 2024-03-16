@@ -72,18 +72,6 @@ if ( ! function_exists( 'karyawp_sidebar_position' ) ) {
 			
 		//is page
 		if(is_page()) {
-			// page template
-			if (
-				is_page_template(
-					array(
-						'page-templates/empty.php',
-						'page-templates/canvas.php',
-						'page-templates/full.php',
-					)
-				)
-			) {
-				$sidebar_position = 'disable';
-			}
 
 			$sidebar_page = get_post_meta(get_the_ID(),'karyawp_sidebar_position',true);
 			if($sidebar_page){
