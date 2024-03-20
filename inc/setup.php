@@ -102,16 +102,3 @@ if (!function_exists('karyawp_setup')) {
         
 	}
 }
-
-add_action('after_setup_theme', 'karyawp_beaver_builder_support');
-
-if (!function_exists('karyawp_beaver_builder_support')) {
-	/**
-	 * Add Themer support beaver builder to theme
-	 */
-	function karyawp_beaver_builder_support()
-	{
-		add_theme_support('fl-theme-builder-headers');
-		add_theme_support('fl-theme-builder-footers');
-	}
-}
