@@ -25,7 +25,7 @@
          add_theme_support( 'align-wide' );
  
          // add style from theme.css
-         add_editor_style( 'assets/theme.css' );
+         add_editor_style( 'assets/css/theme.css' );
 
          // add color pallete
          add_theme_support( 'editor-color-palette', array(
