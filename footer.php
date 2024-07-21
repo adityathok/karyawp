@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 		do_action( 'karyawp_footer_before' );
 		/** 
 		* karyawp_footer()
-		* partials/footer
+		* template-parts/footer
 		*/
 		do_action( 'karyawp_footer' );
 		do_action( 'karyawp_footer_after' );

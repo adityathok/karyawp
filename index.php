@@ -24,12 +24,12 @@ do_action('karyawp_container_before');
                 while ( have_posts() ) {
                     the_post();
 
-                    get_template_part( 'partials/content/content', get_post_format() );
+                    get_template_part( 'template-loop/content', get_post_format() );
 
                     $i++;
                 }
             } else {
-                get_template_part( 'partials/content/none' );
+                get_template_part( 'template-loop/content-none' );
             }
             ?>
 

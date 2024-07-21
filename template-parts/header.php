@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<header id="site-header">
+<header id="site-header" class="sticky-top">
 
     <nav id="navbar-main" class="navbar navbar-expand-lg bg-body shadow-sm " aria-label="Main navigation">
 

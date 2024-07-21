@@ -14,9 +14,9 @@ defined( 'ABSPATH' ) || exit;
     <div class="<?php echo karyawp_container_type('footer');?>">
 
         <?php
-            get_template_part( 'partials/footer/widgets' );
+            get_template_part( 'template-parts/footer/widgets' );
             
-            get_template_part( 'partials/footer/copyright' );
+            get_template_part( 'template-parts/footer/copyright' );
         ?>
 
     </div>
