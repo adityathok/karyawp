@@ -10,7 +10,7 @@ if (!function_exists('karyawp_header')) {
     add_action('karyawp_header', 'karyawp_header', 20);
     function karyawp_header()
     {
-        get_template_part( 'partials/header/layout' );
+        get_template_part( 'template-parts/header'  );
     }
 }
 

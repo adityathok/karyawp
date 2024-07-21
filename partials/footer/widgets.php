@@ -5,13 +5,8 @@
  * @package karyawp
 */
 
-$widgets = get_theme_mod( 'karyawp_footer_widgets', 3 );
-
-if($widgets == 0)
-    return false;
-
 echo '<div class="row">';
-    for ($x = 1; $x <= $widgets; $x++) {
+    for ($x = 1; $x <= 4; $x++) {
 
         if ( ! is_active_sidebar( 'footer-sidebar-'.$x ) ) {
             continue;

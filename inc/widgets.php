@@ -33,12 +33,6 @@ if (!function_exists('karyawp_footerwidgets_init')) {
     add_action('widgets_init', 'karyawp_footerwidgets_init');
     function karyawp_footerwidgets_init() {
 		
-		// Customizer
-		$widgets = get_theme_mod( 'karyawp_footer_widgets', 4 );
-
-		if($widgets == 0)
-			return false;
-
 		for ($i = 1; $i <= 4; $i++) {
 
 			$widget_number = sprintf(__('Footer Sidebar %d', 'karyawp'), $i);

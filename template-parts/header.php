@@ -1,6 +1,6 @@
 <?php
 /**
- * Layout Header
+ * Part Layout Header
  *
  * @package karyawp
  */
@@ -9,14 +9,14 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<header id="site-header" <?php karyawp_header_attributes(); ?>>
+<header id="site-header">
 
     <nav id="navbar-main" class="navbar navbar-expand-lg bg-body shadow-sm " aria-label="Main navigation">
 
-        <div class="<?php echo karyawp_container_type('header');?>">                        
+        <div class="container">                        
 
             <?php
-                get_template_part( 'partials/header/logo' );
+                get_template_part( 'template-parts/header/logo' );
             ?>
 
             <button class="navbar-toggler border-0 rounded-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavigation" aria-controls="offcanvasNavigation" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@ defined( 'ABSPATH' ) || exit;
 
                     <div class="d-flex justify-content-lg-end flex-grow-1 pe-2">
                         <?php
-                            get_template_part( 'partials/header/menu' );
+                            get_template_part( 'template-parts/header/menu' );
                         ?>
                     </div>
 
@@ -52,12 +52,12 @@ defined( 'ABSPATH' ) || exit;
                         </li>
                         <li class="nav-item d-none d-md-flex">
                             <?php
-                                get_template_part( 'partials/header/search' );
+                                get_template_part( 'template-parts/header/search' );
                             ?>
                         </li>
                         <li class="nav-item">
                             <?php
-                                get_template_part( 'partials/header/darkmode' );
+                                get_template_part( 'template-parts/header/darkmode' );
                             ?>
                         </li>
                     </ul>

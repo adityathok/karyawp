@@ -30,7 +30,6 @@ $karyawp_includes = array(
 	'/pagination.php',           					/// Custom pagination for this theme.
 	'/enqueue.php',         						/// Enqueue scripts and styles.
 	'/block-editor.php',         					/// Block editor (gutenberg) specific functionality
-	'/meta-box.php',         						/// Custom Meta box for themes
 	'/widgets.php',	 								/// Declaring widgets
 	'/custom-comments.php',							/// Layouting Comments Form
 	'/breadcrumbs.php',								/// A breadcrumb menu script

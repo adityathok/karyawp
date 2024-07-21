@@ -99,50 +99,6 @@ if ( ! function_exists( 'karyawp_sidebar_position' ) ) {
 	}
 }
 
-if ( ! function_exists( 'karyawp_header_attributes' ) ) {
-	/**
-	 * Displays the attributes for the header element.
-	 */
-	function karyawp_header_attributes() {
-		/**
-		 * Filters the header attributes.
-		 *
-		 * @param array $atts An associative array of attributes.
-		 */
-		$atts = array_unique( apply_filters( 'karyawp_header_attributes', $atts = array() ) );
-
-		if ( ! is_array( $atts ) || empty( $atts ) ) {
-			$atts = array();
-		}
-
-		$atts['class'] 	= 'site-header';
-		$atts['role']	= 'banner';
-
-		$sticky = get_theme_mod( 'karyawp_header_sticky', true );
-		if($sticky){
-			$atts['class'] = $atts['class'].' sticky-top';
-		}
-
-		$overlay = get_theme_mod( 'karyawp_header_overlay', false );
-		if(is_page()){
-			$overlay = get_post_meta(get_the_ID(),'karyawp_header_overlay',true);
-		}
-		if($overlay){
-			$atts['class'] = $atts['class'].' bg-overlay z-2';
-		}
-
-		$attributes = '';
-		foreach ( $atts as $name => $value ) {
-			if ( $value ) {
-				$attributes .= sanitize_key( $name ) . '="' . esc_attr( $value ) . '" ';
-			} else {
-				$attributes .= sanitize_key( $name ) . ' ';
-			}
-		}
-		echo trim( $attributes ); // phpcs:ignore WordPress.Security.EscapeOutput
-	}
-}
-
 if ( ! function_exists( 'karyawp_inline_customizer_style' ) ) {
 	/**
 	 * Load inline style from customizer for the theme.

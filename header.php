@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 		do_action( 'karyawp_header_before' );
 		/** 
 		* karyawp_header()
-		* partials/header
+		* template-parts/header
 		*/
 		do_action( 'karyawp_header' );
 		do_action( 'karyawp_header_after' );

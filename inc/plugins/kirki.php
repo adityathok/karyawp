@@ -234,62 +234,6 @@ new \Kirki\Field\Background(
 	]
 );
 
-//Header Section
-new \Kirki\Section(
-    'karyawp_header_section',
-    [
-        'title'       => esc_html__('Header', 'karyawp'),
-        'description' => esc_html__('Header settings.', 'karyawp'),
-        'panel'       => 'karyawp_options_panel',
-        'priority'    => 160,
-    ]
-);
-new \Kirki\Field\Radio_Buttonset(
-	[
-		'settings'    => 'karyawp_header_sticky',
-		'label'       => esc_html__( 'Sticky Header', 'karyawp' ),
-		'section'     => 'karyawp_header_section',
-		'default'     => '1',
-		'priority'    => 10,
-		'choices'     => [
-			0   => esc_html__( 'Disable', 'karyawp' ),
-			1   => esc_html__( 'Enable', 'karyawp' ),
-		],
-	]
-);
-new \Kirki\Field\Radio_Buttonset(
-	[
-		'settings'    => 'karyawp_header_overlay',
-		'label'       => esc_html__( 'Overlay Header', 'karyawp' ),
-		'section'     => 'karyawp_header_section',
-		'default'     => '0',
-		'priority'    => 10,
-		'choices'     => [
-			0   => esc_html__( 'Disable', 'karyawp' ),
-			1   => esc_html__( 'Enable', 'karyawp' ),
-		],
-	]
-);
-new \Kirki\Field\Dimension(
-	[
-		'settings'    => 'karyawp_max_height_logo',
-		'label'       => esc_html__( 'Max Height Logo', 'karyawp' ),
-		'description' => esc_html__( 'Logo size', 'karyawp' ),
-		'section'     => 'karyawp_header_section',
-		'default'     => '3rem',
-		'choices'     => [
-			'accept_unitless' => false,
-		],
-        'transport' => 'auto',
-        'output'    => array(
-            array(
-                'element'  => '#navbar-main .navbar-brand img',
-                'property' => 'max-height'
-            ),
-        ),
-	]
-);
-
 // Footer Section
 new \Kirki\Section(
     'karyawp_footer_section',
@@ -299,22 +243,6 @@ new \Kirki\Section(
         'panel'       => 'karyawp_options_panel',
         'priority'    => 160,
     ]
-);
-new \Kirki\Field\Radio_Buttonset(
-	[
-		'settings'    => 'karyawp_footer_widgets',
-		'label'       => esc_html__( 'Number of footer Widgets', 'karyawp' ),
-		'section'     => 'karyawp_footer_section',
-		'default'     => '3',
-		'priority'    => 10,
-		'choices'     => [
-			0   => esc_html__( '0', 'karyawp' ),
-			1   => esc_html__( '1', 'karyawp' ),
-			2   => esc_html__( '2', 'karyawp' ),
-			3   => esc_html__( '3', 'karyawp' ),
-			4   => esc_html__( '4', 'karyawp' ),
-		],
-	]
 );
 new \Kirki\Field\Radio_Buttonset(
 	[
